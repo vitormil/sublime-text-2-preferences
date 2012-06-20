@@ -1,0 +1,17 @@
+{
+	"auto_upgrade_last_run": 1340147218,
+	"installed_packages":
+	[
+		"Alignment",
+		"CoffeeScript",
+		"GitHub.app Menu",
+		"jQuery",
+		"Package Control",
+		"RubyTest",
+		"Terminal"
+	],
+	"repositories":
+	[
+		""
+	]
+}

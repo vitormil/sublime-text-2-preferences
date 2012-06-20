@@ -1,0 +1,18 @@
+{
+    "debug"           :  true,
+    "ctags_command"   :  "ctags -R -f .tags",
+    "filters"         :  {
+        "source.python": {"type":"^i$"}
+    },
+    "definition_filters": {
+        "source.php": {"type":"^v$"}
+    },
+    "definition_current_first": true,
+    "show_context_menus": true,
+    "extra_tag_paths" :  [ [["source.rails", "osx"], "C:\\Python27\\Lib\\tags"] ],
+    "extra_tag_files" : [
+        ".gemtags",
+        "/Users/vitormil/Vitor/ctags/rails/.tags",
+        "/Users/vitormil/.rvm/gems/ruby-1.9.3-p194@global/.tags",
+        "/Users/vitormil/.rvm/rubies/ruby-1.9.3-p194/.tags" ]
+}

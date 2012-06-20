@@ -1,0 +1,4 @@
+{
+	"last_test_file": "login_spec.rb",
+	"last_test_run": "cd /Users/vitormil/Sites/rails-skeleton && rspec spec/integration/login_spec.rb -l 46"
+}

@@ -1,0 +1,12 @@
+{
+	"color_scheme": "Packages/vitormil/vitormil.tmTheme",
+	"font_size": 15.0,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"word_wrap": false
+}
