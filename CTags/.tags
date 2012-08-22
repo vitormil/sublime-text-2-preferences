@@ -1,0 +1,152 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CTagsTest	ctags.py	/^class CTagsTest(unittest.TestCase):$/;"	c
+ENTITY_SCOPE	ctagsplugin.py	/^ENTITY_SCOPE = "entity.name.function, entity.name.type, meta.toc-list"$/;"	v
+FILENAME	ctags.py	/^FILENAME = 1$/;"	v
+FILENAME	ctagsplugin.py	/^from ctags import (FILENAME, parse_tag_lines, PATH_ORDER, SYMBOL, Tag, TagFile)$/;"	i
+JumpBack	ctagsplugin.py	/^class JumpBack(sublime_plugin.WindowCommand):$/;"	c
+JumpBackListener	ctagsplugin.py	/^class JumpBackListener(sublime_plugin.EventListener):$/;"	c
+MATCHES_STARTWITH	ctags.py	/^MATCHES_STARTWITH = 'starts_with'$/;"	v
+NavigateToDefinition	ctagsplugin.py	/^class NavigateToDefinition(sublime_plugin.TextCommand):$/;"	c
+OBJECT_PUNCTUATORS	ctagsplugin.py	/^OBJECT_PUNCTUATORS = {$/;"	v
+ON_LOAD	ctagsplugin.py	/^ON_LOAD       = sublime_plugin.all_callbacks['on_load']$/;"	v
+PATH_IGNORE_FIELDS	ctags.py	/^PATH_IGNORE_FIELDS = ( 'file', 'access', 'signature',$/;"	v
+PATH_ORDER	ctags.py	/^PATH_ORDER = [$/;"	v
+PATH_ORDER	ctagsplugin.py	/^from ctags import (FILENAME, parse_tag_lines, PATH_ORDER, SYMBOL, Tag, TagFile)$/;"	i
+RE_SPECIAL_CHARS	ctagsplugin.py	/^RE_SPECIAL_CHARS = re.compile ( #as “f$/;"	v
+SYMBOL	ctags.py	/^SYMBOL = 0$/;"	v
+SYMBOL	ctagsplugin.py	/^from ctags import (FILENAME, parse_tag_lines, PATH_ORDER, SYMBOL, Tag, TagFile)$/;"	i
+ShowSymbols	ctagsplugin.py	/^class ShowSymbols(sublime_plugin.TextCommand):$/;"	c
+TAGS_RE	ctags.py	/^TAGS_RE = re.compile ($/;"	v
+TAG_PATH_SPLITTERS	ctags.py	/^TAG_PATH_SPLITTERS = ('\/', '.', '::', ':')$/;"	v
+Tag	ctags.py	/^class Tag(dict):$/;"	c
+Tag	ctagsplugin.py	/^from ctags import (FILENAME, parse_tag_lines, PATH_ORDER, SYMBOL, Tag, TagFile)$/;"	i
+TagFile	ctags.py	/^class TagFile(object):$/;"	c
+TagFile	ctagsplugin.py	/^from ctags import (FILENAME, parse_tag_lines, PATH_ORDER, SYMBOL, Tag, TagFile)$/;"	i
+__getitem__	ctags.py	/^    def __getitem__(self, index):$/;"	m	class:TagFile	file:
+__init__	ctags.py	/^    def __init__(self, *args, **kw):$/;"	m	class:Tag
+__init__	ctags.py	/^    def __init__(self, p, column, match_as=None):$/;"	m	class:TagFile
+__init__	ctagsplugin.py	/^    def __init__(self):$/;"	m	class:one_shot
+__len__	ctags.py	/^    def __len__(self):$/;"	m	class:TagFile	file:
+alternate_tags_paths	ctagsplugin.py	/^def alternate_tags_paths(view, tags_file):$/;"	f
+and_then	ctagsplugin.py	/^        def and_then(view):$/;"	f	function:JumpBack.jump
+and_then	ctagsplugin.py	/^    def and_then(view):$/;"	f	function:scroll_to_tag
+append	ctagsplugin.py	/^    def append(cls, view):$/;"	m	class:JumpBack
+bisect	ctags.py	/^import bisect$/;"	i
+build_ctags	ctags.py	/^def build_ctags(cmd, tag_file, env=None):$/;"	f
+build_ctags	ctagsplugin.py	/^    def build_ctags(self, cmd, tag_file):$/;"	m	class:rebuild_tags
+callbacks	ctagsplugin.py	/^                callbacks = ON_LOAD$/;"	v	class:on_load.wrapper.wrapped.set_on_load
+chain	ctagsplugin.py	/^from itertools import chain$/;"	i
+check_if_building	ctagsplugin.py	/^def check_if_building(self, **args):$/;"	f
+co_routine	ctagsplugin.py	/^    def co_routine(self, view):$/;"	m	class:test_ctags
+command	ctagsplugin.py	/^        def command(self, edit, **args):$/;"	f	function:ctags_goto_command.wrapper
+commonfolder	ctagsplugin.py	/^def commonfolder(m):$/;"	f
+compile_definition_filters	ctagsplugin.py	/^def compile_definition_filters(view):$/;"	f
+compile_filters	ctagsplugin.py	/^def compile_filters(view):$/;"	f
+compile_lists	ctagsplugin.py	/^    def compile_lists(sorter):$/;"	f	function:prepared_4_quickpanel
+contextmanager	ctagsplugin.py	/^from contextlib import contextmanager$/;"	i
+create_tag_path	ctags.py	/^def create_tag_path(tag):$/;"	f
+ctags	ctagsplugin.py	/^import ctags$/;"	i
+ctags_goto_command	ctagsplugin.py	/^def ctags_goto_command(jump_directly_if_one=False):$/;"	f
+decorator	ctagsplugin.py	/^    def decorator(func):$/;"	f	function:threaded
+definition_cmp	ctagsplugin.py	/^        def definition_cmp(a, b):$/;"	f	function:NavigateToDefinition.run
+different_mod_area	ctagsplugin.py	/^def different_mod_area(f1, f2, r1, r2):$/;"	f
+dir	ctags.py	/^    def dir(self):$/;"	m	class:TagFile
+dirname	ctags.py	/^from os.path import dirname$/;"	i
+dirname	ctagsplugin.py	/^from os.path import join, normpath, dirname$/;"	i
+done_building	ctagsplugin.py	/^    def done_building(self, tag_file):$/;"	m	class:rebuild_tags
+done_in_main	ctagsplugin.py	/^    def done_in_main(*args, **kw):$/;"	f	function:in_main
+edition	ctagsplugin.py	/^def edition(view):$/;"	f
+escape_regex	ctagsplugin.py	/^def escape_regex(s):$/;"	f
+exact_matches	ctags.py	/^    def exact_matches(self, iterator, tag):$/;"	m	class:TagFile
+files_to_search	ctagsplugin.py	/^def files_to_search(view, tags_file, multiple=True):$/;"	f
+find_source	ctagsplugin.py	/^def find_source(view, pattern, start_at, flags=sublime.LITERAL):$/;"	f
+find_tags_relative_to	ctagsplugin.py	/^def find_tags_relative_to(view):$/;"	f
+find_top_folder	ctagsplugin.py	/^def find_top_folder(view, filename):$/;"	f
+find_with_scope	ctagsplugin.py	/^def find_with_scope(view, pattern, scope, start_pos=0, cond=True, flags=0):$/;"	f
+follow_tag_path	ctagsplugin.py	/^def follow_tag_path(view, tag_path, pattern):$/;"	f
+format_tag_for_quickopen	ctagsplugin.py	/^def format_tag_for_quickopen(tag, file=1):$/;"	f
+functools	ctagsplugin.py	/^import functools$/;"	i
+get	ctags.py	/^    def get(self, *tags):$/;"	m	class:TagFile
+get_tag_class	ctags.py	/^def get_tag_class(tag):$/;"	f
+get_tags_dict	ctags.py	/^    def get_tags_dict(self, *tags, **kw):$/;"	m	class:TagFile
+glob	ctagsplugin.py	/^import glob$/;"	i
+hook	ctagsplugin.py	/^                def hook(av):$/;"	f	function:test_ctags.co_routine
+iget	ctagsplugin.py	/^from operator import itemgetter as iget$/;"	i
+in_main	ctagsplugin.py	/^def in_main(f):$/;"	f
+is_enabled	ctagsplugin.py	/^    def is_enabled(self, to=None):$/;"	m	class:JumpBack
+is_enabled	ctagsplugin.py	/^    is_enabled = check_if_building$/;"	v	class:NavigateToDefinition
+is_enabled	ctagsplugin.py	/^    is_enabled = check_if_building$/;"	v	class:ShowSymbols
+is_visible	ctagsplugin.py	/^    def is_visible(self):$/;"	m	class:NavigateToDefinition
+is_visible	ctagsplugin.py	/^    def is_visible(self):$/;"	m	class:ShowSymbols
+is_visible	ctagsplugin.py	/^    def is_visible(self, to=None):$/;"	m	class:JumpBack
+join	ctagsplugin.py	/^from os.path import join, normpath, dirname$/;"	i
+jump	ctagsplugin.py	/^    def jump(self, fn, sel):$/;"	m	class:JumpBack
+last	ctagsplugin.py	/^    last    =     []$/;"	v	class:JumpBack
+lastModifications	ctagsplugin.py	/^    def lastModifications(self):$/;"	m	class:JumpBack
+mmap	ctags.py	/^import mmap$/;"	i
+mods	ctagsplugin.py	/^    mods    =     []$/;"	v	class:JumpBack
+next	ctagsplugin.py	/^    def next(self):$/;"	m	class:test_ctags
+normpath	ctagsplugin.py	/^from os.path import join, normpath, dirname$/;"	i
+on_load	ctagsplugin.py	/^                def on_load(self, view):$/;"	m	class:on_load.wrapper.wrapped.set_on_load
+on_load	ctagsplugin.py	/^def on_load(f=None, window=None, encoded_row_col=True, begin_edit=False):$/;"	f
+on_modified	ctagsplugin.py	/^    def on_modified(self, view):$/;"	m	class:JumpBackListener
+on_select	ctagsplugin.py	/^                def on_select(i):$/;"	f	function:ctags_goto_command.wrapper.command
+one_shot	ctagsplugin.py	/^class one_shot(object):$/;"	c
+os	ctags.py	/^import os$/;"	i
+os	ctagsplugin.py	/^import os$/;"	i
+parse_tag_file	ctags.py	/^def parse_tag_file(tag_file):$/;"	f
+parse_tag_lines	ctags.py	/^def parse_tag_lines(lines, order_by='symbol', tag_class=None, filters=[]):$/;"	f
+parse_tag_lines	ctagsplugin.py	/^from ctags import (FILENAME, parse_tag_lines, PATH_ORDER, SYMBOL, Tag, TagFile)$/;"	i
+pass_def_filter	ctagsplugin.py	/^        def pass_def_filter(o):$/;"	f	function:NavigateToDefinition.run
+post_process_tag	ctags.py	/^def post_process_tag(search_obj):$/;"	f
+pprint	ctagsplugin.py	/^import pprint$/;"	i
+prepared_4_quickpanel	ctagsplugin.py	/^def prepared_4_quickpanel(formatter=format_tag_for_quickopen, path_cols=()):$/;"	f
+process_ex_cmd	ctags.py	/^def process_ex_cmd(ex):$/;"	f
+process_fields	ctags.py	/^def process_fields(fields):$/;"	f
+re	ctags.py	/^import re$/;"	i
+re	ctagsplugin.py	/^import re$/;"	i
+reached_top_level_folders	ctagsplugin.py	/^def reached_top_level_folders(folders, oldpath, path):$/;"	f
+rebuild_tags	ctagsplugin.py	/^class rebuild_tags(sublime_plugin.TextCommand):$/;"	c
+resort_ctags	ctags.py	/^def resort_ctags(tag_file):$/;"	f
+routine	ctagsplugin.py	/^    routine = None$/;"	v	class:test_ctags
+run	ctagsplugin.py	/^            def run():$/;"	f	function:threaded.decorator.threaded
+run	ctagsplugin.py	/^    def run(self, edit, **args):$/;"	m	class:rebuild_tags
+run	ctagsplugin.py	/^    def run(self, edit, **args):$/;"	m	class:test_ctags
+run	ctagsplugin.py	/^    def run(self, to=None):$/;"	m	class:JumpBack
+run	ctagsplugin.py	/^    def run(self, view, args, tags_file, tags):$/;"	m	class:NavigateToDefinition
+run	ctagsplugin.py	/^    def run(self, view, args, tags_file, tags):$/;"	m	class:ShowSymbols
+scroll_to_tag	ctagsplugin.py	/^def scroll_to_tag(view, tag, hook=None):$/;"	f
+select	ctagsplugin.py	/^def select(view, region):$/;"	f
+set_on_load	ctagsplugin.py	/^            class set_on_load(one_shot):$/;"	c	function:on_load.wrapper.wrapped
+setting	ctagsplugin.py	/^setting = sublime.load_settings('CTags.sublime-settings').get # (key, None)$/;"	v
+sorted_tags	ctagsplugin.py	/^        def sorted_tags():$/;"	f	function:NavigateToDefinition.run
+sorted_tags	ctagsplugin.py	/^        def sorted_tags():$/;"	f	function:ShowSymbols.run
+splits	ctags.py	/^def splits(string, *splitters):$/;"	f
+starts_with	ctags.py	/^    def starts_with(self, iterator, tag):$/;"	m	class:TagFile
+status_message	ctagsplugin.py	/^from sublime import status_message$/;"	i
+string	ctagsplugin.py	/^import string$/;"	i
+sublime	ctagsplugin.py	/^import sublime$/;"	i
+sublime_plugin	ctagsplugin.py	/^import sublime_plugin$/;"	i
+subprocess	ctags.py	/^import subprocess$/;"	i
+tag_class	ctags.py	/^    def tag_class(self):$/;"	m	class:TagFile
+tagged_project_files	ctagsplugin.py	/^def tagged_project_files(view, tag_dir):$/;"	f
+test_build_ctags__ctags_not_on_path	ctags.py	/^def test_build_ctags__ctags_not_on_path():$/;"	f
+test_build_ctags__dodgy_command	ctags.py	/^def test_build_ctags__dodgy_command():$/;"	f
+test_ctags	ctagsplugin.py	/^class test_ctags(sublime_plugin.TextCommand):$/;"	c
+test_startswith	ctags.py	/^    def test_startswith(self):$/;"	m	class:CTagsTest
+test_tags_files	ctags.py	/^    def test_tags_files(self):$/;"	m	class:CTagsTest
+threaded	ctagsplugin.py	/^        def threaded(*args, **kwargs):$/;"	f	function:threaded.decorator
+threaded	ctagsplugin.py	/^def threaded(finish=None, msg="Thread already running"):$/;"	f
+threading	ctagsplugin.py	/^import threading$/;"	i
+unescape_ex	ctags.py	/^def unescape_ex(ex):$/;"	f
+unittest	ctags.py	/^import unittest$/;"	i
+view_fn	ctagsplugin.py	/^def view_fn(v): return v.file_name() or '.'$/;"	f
+with_statement	ctags.py	/^from __future__ import with_statement$/;"	i
+wrapped	ctagsplugin.py	/^        def wrapped():$/;"	f	function:on_load.wrapper
+wrapper	ctagsplugin.py	/^    def wrapper(cb):$/;"	f	function:on_load
+wrapper	ctagsplugin.py	/^    def wrapper(f):$/;"	f	function:ctags_goto_command

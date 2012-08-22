@@ -1,13 +1,18 @@
 {
-	"auto_upgrade_last_run": 1340147218,
+	"auto_upgrade_last_run": 1345646512,
 	"installed_packages":
 	[
 		"Alignment",
+		"All Autocomplete",
+		"BracketHighlighter",
 		"CoffeeScript",
+		"Git",
 		"GitHub.app Menu",
 		"jQuery",
 		"Package Control",
 		"RubyTest",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
 		"Terminal"
 	],
 	"repositories":

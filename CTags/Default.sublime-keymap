@@ -3,45 +3,45 @@
     "command": "navigate_to_definition",
     "context": [],
     "keys": [
-      "ctrl+t", "ctrl+t"
+      "super+ctrl+t", "super+ctrl+t"
     ]
-  }, 
+  },
   {
     "command": "navigate_to_definition",
     "keys": [
       "ctrl+alt+]"
     ]
-  },  
+  },
   {
     "command": "jump_back",
-    "context": [], 
+    "context": [],
     "keys": [
       "ctrl+t", "ctrl+b"
     ]
-  }, 
+  },
   {
     "command": "jump_back",
     "keys": [
       "ctrl+alt+["
     ]
-  }, 
+  },
   {
     "command": "jump_back",
     "args": {
       "to": "last_modification"
-    }, 
+    },
     "context": [],
     "keys": [
       "ctrl+t", "ctrl+m"
     ]
-  }, 
+  },
   {
     "command": "rebuild_tags",
     "context": [],
     "keys": [
       "ctrl+t", "ctrl+r"
     ]
-  }, 
+  },
   {
     "command": "show_symbols",
     "context": [
@@ -51,16 +51,16 @@
         "operand": "source -source.css",
         "operator": "equal"
       }
-    ], 
+    ],
     "keys": [
       "alt+s"
     ]
-  }, 
+  },
   {
     "command": "show_symbols",
     "args": {
       "type": "multi"
-    }, 
+    },
     "context": [
       {
         "key": "selector",
@@ -68,7 +68,7 @@
         "operand": "source -source.css",
         "operator": "equal"
       }
-    ], 
+    ],
     "keys": [
       "alt+shift+s"
     ]

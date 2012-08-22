@@ -12,7 +12,6 @@
     "extra_tag_paths" :  [ [["source.rails", "osx"], "C:\\Python27\\Lib\\tags"] ],
     "extra_tag_files" : [
         ".gemtags",
-        "/Users/vitormil/Vitor/ctags/rails/.tags",
-        "/Users/vitormil/.rvm/gems/ruby-1.9.3-p194@global/.tags",
-        "/Users/vitormil/.rvm/rubies/ruby-1.9.3-p194/.tags" ]
+        "/Users/vitormil/Vitor/ctags/rails/.tags"
+    ]
 }

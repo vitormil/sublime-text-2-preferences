@@ -1,0 +1,365 @@
+{
+    "3d30059a19ffbe7336a20bc4b6022601": {
+        "opened": [
+            {
+                "index": 1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Sites/notewq/config.ru"
+            }, 
+            {
+                "index": 2, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Sites/notewq/README"
+            }
+        ], 
+        "closed": [
+            {
+                "index": 0, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings"
+            }, 
+            {
+                "index": 3, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Sites/notewq/.rspec"
+            }, 
+            {
+                "index": 4, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Sites/notewq/.gitignore"
+            }
+        ]
+    }, 
+    "global": {
+        "opened": [
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/open_recently_closed_file.py"
+            }, 
+            {
+                "index": 0, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/GotoRecent/Default (Linux).sublime-keymap"
+            }, 
+            {
+                "index": -1, 
+                "group": -1, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/FileHistory.json"
+            }, 
+            {
+                "index": -1, 
+                "group": -1, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/hash-pair-(-).sublime-snippet"
+            }, 
+            {
+                "index": -1, 
+                "group": -1, 
+                "filename": "/Users/vitormil/Sites/notewq/config.ru"
+            }, 
+            {
+                "index": -1, 
+                "group": -1, 
+                "filename": "/Users/vitormil/Sites/notewq/README"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/GotoRecent/Default (OSX).sublime-keymap"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/GotoRecent/Default (Windows).sublime-keymap"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/SetSyntaxHighlight.py"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/debug.sublime-snippet"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/vitormil.tmTheme"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/vitoroliveira.tmTheme.cache"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/vitormil.tmTheme.cache"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/hash.sublime-snippet"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/YAML.sublime-settings"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/RubyTest.last-run"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/Ruby.sublime-settings"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/Ruby on Rails.sublime-settings"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/Package Control.sublime-settings"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/HTML (Rails).sublime-settings"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/Default (Linux).sublime-keymap"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/debug.sublime-snippet"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/YAML/YAML.tmLanguage"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/YAML/Comments.tmPreferences"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/YAML/Comments.tmPreferences.cache"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/open_recently_closed_file_2.py"
+            }
+        ], 
+        "closed": [
+            {
+                "index": 0, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings"
+            }, 
+            {
+                "index": 3, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/encoding.sublime-snippet"
+            }, 
+            {
+                "index": 3, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Sites/notewq/.rspec"
+            }, 
+            {
+                "index": 4, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Sites/notewq/.gitignore"
+            }, 
+            {
+                "index": -1, 
+                "group": -1, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/CSS.sublime-settings"
+            }
+        ]
+    }, 
+    "ee93b1dba7be464fdd6f163dcec36845": {
+        "opened": [
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/open_recently_closed_file.py"
+            }, 
+            {
+                "index": 0, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/GotoRecent/Default (Linux).sublime-keymap"
+            }, 
+            {
+                "index": -1, 
+                "group": -1, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/FileHistory.json"
+            }, 
+            {
+                "index": -1, 
+                "group": -1, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/hash-pair-(-).sublime-snippet"
+            }, 
+            {
+                "index": -1, 
+                "group": -1, 
+                "filename": "/Users/vitormil/Sites/notewq/config.ru"
+            }, 
+            {
+                "index": -1, 
+                "group": -1, 
+                "filename": "/Users/vitormil/Sites/notewq/README"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/GotoRecent/Default (OSX).sublime-keymap"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/GotoRecent/Default (Windows).sublime-keymap"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/SetSyntaxHighlight.py"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/debug.sublime-snippet"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/vitormil.tmTheme"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/vitoroliveira.tmTheme.cache"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/vitormil.tmTheme.cache"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/hash.sublime-snippet"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/YAML.sublime-settings"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/RubyTest.last-run"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/Ruby.sublime-settings"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/Ruby on Rails.sublime-settings"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/Package Control.sublime-settings"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/HTML (Rails).sublime-settings"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/Default (Linux).sublime-keymap"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/debug.sublime-snippet"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/YAML/YAML.tmLanguage"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/YAML/Comments.tmPreferences"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/YAML/Comments.tmPreferences.cache"
+            }, 
+            {
+                "index": -1, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/open_recently_closed_file_2.py"
+            }
+        ], 
+        "closed": [
+            {
+                "index": 3, 
+                "group": 0, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/vitormil/encoding.sublime-snippet"
+            }, 
+            {
+                "index": -1, 
+                "group": -1, 
+                "filename": "/Users/vitormil/Library/Application Support/Sublime Text 2/Packages/User/CSS.sublime-settings"
+            }
+        ]
+    }
+}
