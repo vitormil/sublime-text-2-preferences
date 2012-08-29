@@ -11,7 +11,6 @@
     "show_context_menus": true,
     "extra_tag_paths" :  [ [["source.rails", "osx"], "C:\\Python27\\Lib\\tags"] ],
     "extra_tag_files" : [
-        ".gemtags",
-        "/Users/vitormil/Vitor/ctags/rails/.tags"
+        ".gemtags"
     ]
 }
