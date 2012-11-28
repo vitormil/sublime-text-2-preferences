@@ -4,13 +4,26 @@
 	"auto_complete_with_fields": true,
 	"color_scheme": "Packages/vitormil/vitormil.tmTheme",
 	"create_window_at_startup": false,
+	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": false,
+	"find_selected_text": true,
 	"font_face": "Menlo",
-	"font_size": 20.0,
+	"font_size": 22.0,
+	"hayaku_CSS_prefixes_disable": true,
+	"hayaku_CSS_whitespace_after_colon": " ",
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
-	"remember_open_files": false,
+	"ignored_packages":
+	[
+		"Vintage",
+		"RubyCheckOnSave"
+	],
+	"remember_open_files": true,
+	"rulers":
+	[
+		79
+	],
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,

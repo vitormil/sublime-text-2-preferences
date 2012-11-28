@@ -1,19 +1,27 @@
 {
-	"auto_upgrade_last_run": 1345810601,
+	"auto_upgrade_last_run": 1354104067,
 	"installed_packages":
 	[
 		"Alignment",
 		"All Autocomplete",
-		"BracketHighlighter",
-		"CoffeeScript",
+		"DetectSyntax",
+		"FindKeyConflicts",
 		"Git",
-		"GitHub.app Menu",
+		"Hayaku - tools for writing CSS faster",
 		"jQuery",
+		"JsFormat",
+		"Modific",
 		"Package Control",
+		"Rails Related Files",
+		"Resize Active Group",
+		"RubyCheckOnSave",
 		"RubyTest",
 		"SideBarEnhancements",
+		"SplitScreen-Resizer",
+		"sublime-split-navigation",
 		"SublimeCodeIntel",
-		"Terminal"
+		"Terminal",
+		"ZenCoding"
 	],
 	"repositories":
 	[
