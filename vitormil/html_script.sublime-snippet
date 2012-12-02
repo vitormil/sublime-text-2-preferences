@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+<script type="text/javascript"${1: src="script.js"}>${2:code();}</script>
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>vscript</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>text.html</scope>
+  <scope>-source</scope>
+</snippet>

@@ -1,0 +1,61 @@
+<snippet>
+  <content><![CDATA[
+var ${1:mySingleton} = (function() {
+  "use strict";
+
+  // Instance stores a reference to the Singleton
+  var instance;
+
+  function init() {
+
+    // Singleton
+
+    // Private methods and variables
+    function privateMethod() {
+      console.log("I am private");
+    };
+
+    var privateVariable = "I am also private";
+
+    return {
+
+      publicMethod: function() {
+        privateMethod();
+        console.log("The public can see me!");
+      },
+
+      publicProperty: "I am also public"
+
+    };
+
+  };
+
+  // Get the Singleton instance if one exists
+  // or create one if it doesn't
+  var getInstance = function() {
+    if (!instance) {
+      instance = init();
+    }
+
+    return instance;
+  };
+
+  return getInstance();
+
+})();
+
+// Usage:
+singleA = ${1:mySingleton};
+singleB = ${1:mySingleton};
+
+singleA.publicMethod();
+singleB.publicMethod();
+console.log( singleA === singleB ); // true
+
+${2:}
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>singleton</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.js</scope>
+</snippet>

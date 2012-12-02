@@ -1,10 +1,11 @@
 {
-	"auto_upgrade_last_run": 1354104067,
+	"auto_upgrade_last_run": 1354483429,
 	"installed_packages":
 	[
 		"Alignment",
 		"All Autocomplete",
 		"DetectSyntax",
+		"Exec In Window",
 		"FindKeyConflicts",
 		"Git",
 		"Hayaku - tools for writing CSS faster",
@@ -13,7 +14,6 @@
 		"Modific",
 		"Package Control",
 		"Rails Related Files",
-		"Resize Active Group",
 		"RubyCheckOnSave",
 		"RubyTest",
 		"SideBarEnhancements",

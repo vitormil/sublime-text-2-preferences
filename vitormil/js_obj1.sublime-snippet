@@ -1,0 +1,35 @@
+<snippet>
+  <content><![CDATA[
+var myCar = {
+
+  brand: "BMW",
+
+  name: "X5",
+
+  drive: function() {
+    console.log("Weee! I'm driving!");
+  },
+
+  panic: function() {
+    console.log("Wait... How do you stop this thing?");
+  }
+
+};
+
+// Use Object.create to instantiate a new car
+var yourCar  = Object.create( myCar );
+yourCar.name = "Z3";
+
+// Now we can see that one is a prototype of the other
+console.log( "myCar:", myCar.name );
+console.log( "yourCar:", yourCar.name );
+
+console.log( "drive:", myCar.drive === yourCar.drive );
+console.log( "name:", myCar.name === yourCar.name );
+
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>obj1</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.js</scope>
+</snippet>
