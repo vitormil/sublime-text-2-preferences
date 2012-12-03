@@ -3,7 +3,6 @@
 	"installed_packages":
 	[
 		"Alignment",
-		"All Autocomplete",
 		"DetectSyntax",
 		"Exec In Window",
 		"FindKeyConflicts",

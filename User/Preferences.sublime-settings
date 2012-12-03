@@ -24,10 +24,10 @@
 	[
 		79
 	],
+	"show_full_path": true,
 	"show_panel_on_build": false,
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": false,
-	"show_full_path": true
+	"word_wrap": false
 }
