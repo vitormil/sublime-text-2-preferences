@@ -1,6 +1,6 @@
 <snippet>
   <content><![CDATA[
-<!DOCTYPE html>
+${3}<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -11,8 +11,7 @@
   <body>
     <h1>${1:AppName}</h1>
 
-    ${2}
-
+    ${2:<script type="text/javascript" src="file.js"></script>}
   </body>
 </html>
 ]]></content>

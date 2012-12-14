@@ -8,7 +8,7 @@
 	"ensure_newline_at_eof_on_save": false,
 	"find_selected_text": true,
 	"font_face": "Menlo",
-	"font_size": 22.0,
+	"font_size": 21.0,
 	"hayaku_CSS_prefixes_disable": true,
 	"hayaku_CSS_whitespace_after_colon": " ",
 	"highlight_line": true,
@@ -17,7 +17,8 @@
 	"ignored_packages":
 	[
 		"Vintage",
-		"RubyCheckOnSave"
+		"RubyCheckOnSave",
+		"SplitScreen-Resizer"
 	],
 	"remember_open_files": true,
 	"rulers":

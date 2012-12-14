@@ -1,8 +1,9 @@
 {
-	"auto_upgrade_last_run": 1354483429,
+	"auto_upgrade_last_run": 1355264467,
 	"installed_packages":
 	[
 		"Alignment",
+		"Color Highlighter",
 		"DetectSyntax",
 		"Exec In Window",
 		"FindKeyConflicts",
