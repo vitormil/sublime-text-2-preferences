@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1355962127,
+	"auto_upgrade_last_run": 1357781152,
 	"installed_packages":
 	[
 		"Alignment",
@@ -9,6 +9,7 @@
 		"FindKeyConflicts",
 		"Git",
 		"Hayaku - tools for writing CSS faster",
+		"Indent XML",
 		"jQuery",
 		"JsFormat",
 		"Modific",
