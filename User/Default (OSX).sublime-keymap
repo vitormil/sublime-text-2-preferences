@@ -4,5 +4,24 @@
   { "keys": ["super+shift+c", "super+shift+r"], "command": "rebuild_tags" },
   { "keys": ["super+shift+c", "super+shift+b"], "command": "jump_back" },
   { "keys": ["super+shift+z"], "command": "zen_as_you_type" },
-  { "keys": ["super+shift+n"], "command": "advanced_new_file" }
+  { "keys": ["super+shift+n"], "command": "advanced_new_file" },
+  { "keys": ["super+k", "super+s"], "command": "swap_case"},
+  { "keys": ["super+v"], "command": "paste_and_indent"},
+  { "keys": ["super+shift+v"], "command": "paste"},
+  { "keys": ["super+shift+r"], "command": "side_bar_rename"},
+  { "keys": ["'"], "command": "insert_snippet", "args": {"contents": "\"${0:$SELECTION}\""}, "context":
+    [
+      {"key": "setting.auto_match_enabled", "operator": "equal", "operand": true},
+      {"key": "selection_empty", "operator": "equal", "operand": false, "match_all": true}
+    ]
+  },
+  { "keys": ["ctrl+shift+."], "command": "erb", "context":
+    [
+      {"key": "selector", "operator": "equal", "operand": "text.html.ruby, source.yaml, source.css, source.scss, source.js"}
+    ]
+  },
+
+  // CTAGS
+  {"keys": ["super+shift+."], "command": "navigate_to_definition"},
+  {"keys": ["super+k", "super+r"], "command": "rebuild_tags"}
 ]

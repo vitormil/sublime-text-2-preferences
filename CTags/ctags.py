@@ -56,8 +56,10 @@ def splits(string, *splitters):
 def parse_tag_lines(lines, order_by='symbol', tag_class=None, filters=[]):
     tags_lookup = {}
 
-    for search_obj in (t for t in (TAGS_RE.search (
-                            l.decode('utf8')) for l in lines) if t):
+    for l in lines:
+        search_obj = TAGS_RE.search(l.decode('utf8'))
+        if not search_obj:
+            continue
 
         tag = post_process_tag(search_obj)
         if tag_class is not None: tag = tag_class(tag)
@@ -215,16 +217,31 @@ class TagFile(object):
 
     def get(self, *tags):
         with open(self.p, 'r+') as fh:
-            self.fh = mmap.mmap(fh.fileno(), 0)
+            if tags:
+                self.fh = mmap.mmap(fh.fileno(), 0)
 
-            for tag in (t.encode() for t in tags):
-                b4 = bisect.bisect_left(self, tag)
-                fh.seek(b4)
+                for tag in (t.encode() for t in tags):
+                    b4 = bisect.bisect_left(self, tag)
+                    fh.seek(b4)
 
-                for l in self.match_as(fh, tag):
+                    for l in self.match_as(fh, tag):
+                        yield l
+
+                self.fh.close()
+            else:
+                for l in fh.readlines():
                     yield l
 
+    def get_by_suffix(self, suffix):
+        with open(self.p, 'r+') as fh:
+            self.fh = mmap.mmap(fh.fileno(), 0)
+
+            for l in fh:
+                if l.split('\t')[self.column].endswith(suffix): yield l
+                else: continue
+
             self.fh.close()
+
 
     def exact_matches(self, iterator, tag):
         for l in iterator:
@@ -251,6 +268,11 @@ class TagFile(object):
 
     def tag_class(self):
         return type('Tag', (Tag,), dict(root_dir = self.dir))
+
+    def get_tags_dict_by_suffix(self, suffix, **kw):
+        filters = kw.get('filters', [])
+        return parse_tag_lines( self.get_by_suffix(suffix),
+                                tag_class=self.tag_class(), filters=filters)
 
     def get_tags_dict(self, *tags, **kw):
         filters = kw.get('filters', [])
@@ -420,3 +442,4 @@ if __name__ == '__main__':
 # value the name declared for that construct in the program. This scope entry
 # indicates the scope in which the tag was found. For example, a tag generated
 # for a C structure member would have a scope looking like "struct:myStruct".myStruct".
+

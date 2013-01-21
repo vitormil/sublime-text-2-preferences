@@ -4,11 +4,12 @@
 	"auto_complete_with_fields": true,
 	"color_scheme": "Packages/vitormil/vitormil.tmTheme",
 	"create_window_at_startup": false,
+	"drag_text": false,
 	"draw_white_space": "all",
-	"ensure_newline_at_eof_on_save": false,
+	"ensure_newline_at_eof_on_save": true,
 	"find_selected_text": true,
 	"font_face": "Menlo",
-	"font_size": 21.0,
+	"font_size": 20.0,
 	"hayaku_CSS_prefixes_disable": true,
 	"hayaku_CSS_whitespace_after_colon": " ",
 	"highlight_line": true,
@@ -17,13 +18,16 @@
 	"ignored_packages":
 	[
 		"Vintage",
-		"RubyCheckOnSave",
-		"SplitScreen-Resizer"
+		"RubyCheckOnSave"
 	],
-	"remember_open_files": true,
+	"new_window_settings":
+	{
+		"show_minimap": false
+	},
+	"remember_open_files": false,
 	"rulers":
 	[
-		79
+		80
 	],
 	"show_full_path": true,
 	"show_panel_on_build": false,
