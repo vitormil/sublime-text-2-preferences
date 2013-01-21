@@ -21,7 +21,6 @@
     ]
   },
 
-  // CTAGS
   {"keys": ["super+shift+."], "command": "navigate_to_definition"},
   {"keys": ["super+k", "super+r"], "command": "rebuild_tags"}
 ]
