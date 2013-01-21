@@ -1,8 +1,10 @@
 {
-	"auto_upgrade_last_run": 1357781152,
+	"auto_upgrade_last_run": 1358732280,
 	"installed_packages":
 	[
 		"Alignment",
+		"BufferScroll",
+		"ChangeQuotes",
 		"Color Highlighter",
 		"DetectSyntax",
 		"Exec In Window",
