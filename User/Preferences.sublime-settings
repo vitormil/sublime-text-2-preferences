@@ -1,89 +1,90 @@
 {
-  "auto_complete_commit_on_tab": true,
-  "auto_complete_delay": 10,
-  "auto_complete_with_fields": true,
-  "binary_file_patterns":
-  [
-    "*.jpg",
-    "*.jpeg",
-    "*.png",
-    "*.gif",
-    "*.ttf",
-    "*.tga",
-    "*.dds",
-    "*.ico",
-    "*.eot",
-    "*.pdf",
-    "*.swf",
-    "*.jar",
-    "*.zip",
-    "*.gem",
-    "*.tar",
-    "*.tar.gz"
-  ],
-  "caret_style": "wide",
-  "color_scheme": "Packages/vitormil/vitormil.tmTheme",
-  "create_window_at_startup": false,
-  "drag_text": false,
-  "draw_white_space": "all",
-  "ensure_newline_at_eof_on_save": true,
-  "file_exclude_patterns":
-  [
-    "*.log",
-    ".DS_Store",
-    "*.sqlite3",
-    "*.rbx",
-    ".tags",
-    ".tags_sorted_by_file",
-    ".tags*",
-    "Gemfile.lock",
-    "*.pyc"
-  ],
-  "find_selected_text": true,
-  "folder_exclude_patterns":
-  [
-    ".svn",
-    ".git",
-    "coverage",
-    "tmp",
-    "pkg",
-    ".sass-cache",
-    "node_modules"
-  ],
-  "indent_guide_options":
-    [
-      "draw_active"
-    ],
-  "font_face": "Menlo",
-  "font_options":
-  [
-    "subpixel_antialias"
-  ],
-  "font_size": 20.0,
-  "hayaku_CSS_prefixes_disable": true,
-  "hayaku_CSS_whitespace_after_colon": " ",
-  "highlight_line": true,
-  "highlight_modified_tabs": true,
-  "hot_exit": false,
-  "ignored_packages":
-  [
-    "Vintage",
-    "RubyCheckOnSave",
-    "Exec In Window"
-  ],
-  "new_window_settings":
-  {
-    "show_minimap": false
-  },
-  "remember_open_files": false,
-  "rulers":
-  [
-    80
-  ],
-  "show_full_path": true,
-  "show_panel_on_build": false,
-  "tab_size": 2,
-  "translate_tabs_to_spaces": true,
-  "trim_trailing_white_space_on_save": true,
-  "word_wrap": false
+	"auto_complete_commit_on_tab": true,
+	"auto_complete_delay": 10,
+	"auto_complete_with_fields": true,
+	"binary_file_patterns":
+	[
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip",
+		"*.gem",
+		"*.tar",
+		"*.tar.gz"
+	],
+	"caret_style": "wide",
+	"color_scheme": "Packages/vitormil/vitormil.tmTheme",
+	"create_window_at_startup": false,
+	"dictionary": "Packages/Languages/en_US.dic",
+	"drag_text": false,
+	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		"*.log",
+		".DS_Store",
+		"*.sqlite3",
+		"*.rbx",
+		".tags",
+		".tags_sorted_by_file",
+		".tags*",
+		"Gemfile.lock",
+		"*.pyc"
+	],
+	"find_selected_text": true,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		"coverage",
+		"tmp",
+		"pkg",
+		".sass-cache",
+		"node_modules"
+	],
+	"font_face": "Menlo",
+	"font_options":
+	[
+		"subpixel_antialias"
+	],
+	"font_size": 20.0,
+	"hayaku_CSS_prefixes_disable": true,
+	"hayaku_CSS_whitespace_after_colon": " ",
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage",
+		"RubyCheckOnSave",
+		"Exec In Window"
+	],
+	"indent_guide_options":
+	[
+		"draw_active"
+	],
+	"new_window_settings":
+	{
+		"show_minimap": false
+	},
+	"remember_open_files": false,
+	"rulers":
+	[
+		80
+	],
+	"show_full_path": true,
+	"show_panel_on_build": false,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": false
 }
