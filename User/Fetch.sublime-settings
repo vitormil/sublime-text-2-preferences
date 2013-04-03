@@ -1,0 +1,12 @@
+{
+	"files":
+	{
+		"jquery": "http://code.jquery.com/jquery.min.js",
+		"normalize": "https://raw.github.com/necolas/normalize.css/master/normalize.css"
+	},
+	"packages":
+	{
+		"960.gs": "http://github.com/nathansmith/960-Grid-System/zipball/master",
+		"html5_boilerplate": "https://github.com/h5bp/html5-boilerplate/zipball/master"
+	}
+}

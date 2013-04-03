@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[
+App.${1:scope_name} = library(function($){
+  "use strict";
+
+  return {
+
+    init: function(){
+      console.log("init", "${1:scope_name}");
+    }
+
+  }
+
+}(jQuery));
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>appl</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.js</scope>
+</snippet>

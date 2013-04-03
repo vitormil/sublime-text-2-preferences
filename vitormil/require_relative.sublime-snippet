@@ -1,0 +1,9 @@
+<snippet>
+  <content><![CDATA[
+require_relative '${1:filename}'
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+<tabTrigger>rr</tabTrigger> -->
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.ruby</scope>
+</snippet>

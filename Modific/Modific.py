@@ -290,7 +290,7 @@ class DiffParser(object):
                 lines = []
                 for line in diff.splitlines():
                     # ignore lines with '\' at the beginning
-                    if line[0] == '\\':
+                    if line.startswith('\\'):
                         continue
 
                     matches = re.findall(re_header, line)
@@ -315,11 +315,11 @@ class DiffParser(object):
             current = chunk['start']
             deleted_line = None
             for line in chunk['lines']:
-                if line[0] == '-':
+                if line.startswith('-'):
                     if (not deleted_line or deleted_line not in deleted):
                         deleted.append(current)
                     deleted_line = current
-                elif line[0] == '+':
+                elif line.startswith('+'):
                     if deleted_line:
                         deleted.pop()
                         deleted_line = None
@@ -342,27 +342,35 @@ class DiffParser(object):
             return (lines list, start_line int, replace_lines int)
         """
 
+        # for each chunk from diff:
         for chunk in self.get_chunks():
+            # if line_num is within that chunk
             if chunk['start'] <= line_num <= chunk['end']:
                 ret_lines = []
-                current = chunk['start']
-                first = None
-                replace_lines = 0
-                return_this_lines = False
+                current = chunk['start']  # line number that corresponds to current version of file
+                first = None  # number of the first line to change
+                replace_lines = 0  # number of lines to change
+                return_this_lines = False  # flag shows whether we can return accumulated lines
                 for line in chunk['lines']:
-                    if line[0] == '-' or line[0] == '+':
+                    if line.startswith('-') or line.startswith('+'):
                         first = first or current
                         if current == line_num:
                             return_this_lines = True
-                        if line[0] == '-':
+                        if line.startswith('-'):
+                            # if line starts with '-' we have previous version
                             ret_lines.append(line[1:])
                         else:
+                            # if line starts with '+' we only increment numbers
                             replace_lines += 1
                             current += 1
                     elif return_this_lines:
                         break
                     else:
+                        # gap between modifications
+                        # reset our variables
                         current += 1
+                        first = current
+                        replace_lines = 0
                         ret_lines = []
                 if return_this_lines:
                     return ret_lines, first, replace_lines
@@ -376,7 +384,9 @@ class HlChangesCommand(DiffCommand, sublime_plugin.TextCommand):
             self.view.erase_regions(hl_key)
             return
 
-        icon = settings.get('region_icon') or 'dot'
+        icon = settings.get('region_icon') or 'modific'
+        if icon == 'modific':
+            icon = '../Modific/icons/' + hl_key
         points = [self.view.text_point(l - 1, 0) for l in lines]
         regions = [sublime.Region(p, p) for p in points]
         self.view.add_regions(hl_key, regions, "markup.%s.diff" % hl_key,

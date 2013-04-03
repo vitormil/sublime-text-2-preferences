@@ -1,5 +1,6 @@
 [
 	{
-		"keys": ["super+shift+l"], "command": "expand_selection_to_quotes"
+    "keys": ["super+shift+l"], "command": "expand_selection_to_quotes",
+		"keys": ["f7"], "command": "expand_selection_to_quotes"
 	}
 ]

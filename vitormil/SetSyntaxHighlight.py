@@ -29,7 +29,7 @@ class SetSyntaxHighlightCommand(sublime_plugin.EventListener):
 
   def set_syntax(self, view, apply, syntax):
     syntaxes = {
-      "rspec": "RSpec/RSpec.tmLanguage",
+      "rspec": "Ruby/Ruby.tmLanguage",
       "ruby": "Ruby/Ruby.tmLanguage",
       "rails": "Rails/Ruby on Rails.tmLanguage",
       "coffee": "CoffeeScript/Syntaxes/CoffeeScript.tmLanguage",
