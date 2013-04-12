@@ -24,9 +24,8 @@
     ]
   },
 
-  {"keys": ["super+shift+."], "command": "navigate_to_definition"},
-  {"keys": ["super+k", "super+r"], "command": "rebuild_tags"},
+  {"keys": ["f12"], "command": "navigate_to_definition"},
+  {"keys": ["option+f12"], "command": "rebuild_tags"},
 
   {"keys": ["super+option+d"], "command": "delete_file", "args": {"files": []} }
-
 ]

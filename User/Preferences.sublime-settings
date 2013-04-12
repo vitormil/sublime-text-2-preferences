@@ -1,4 +1,5 @@
 {
+	"fade_fold_buttons": false,
 	"auto_complete_commit_on_tab": true,
 	"auto_complete_delay": 10,
 	"auto_complete_triggers":
@@ -29,8 +30,9 @@
 		"*.tar",
 		"*.tar.gz"
 	],
-	"caret_style": "wide",
-	"color_scheme": "Packages/vitormil/vitormil.tmTheme",
+	"bold_folder_labels": true,
+	"caret_style": "phase",
+	"color_scheme": "Packages/User/colour-schemes/Espresso Soda.tmTheme",
 	"create_window_at_startup": false,
 	"dictionary": "Packages/Languages/en_US.dic",
 	"drag_text": false,
@@ -72,27 +74,30 @@
 	[
 		"Vintage",
 		"RubyCheckOnSave",
-		"SublimeLinter"
+		"SublimeLinter",
+		"TernJS",
+		"JsFormat"
 	],
 	"indent_guide_options":
 	[
 		"draw_active"
 	],
 	"line_padding_bottom": 2,
-	"line_padding_top": 0,
+	"line_padding_top": 2,
 	"new_window_settings":
 	{
 		"show_minimap": false
 	},
-	"nice": true,
 	"remember_open_files": false,
 	"rulers":
 	[
 		80
 	],
 	"show_full_path": true,
+	"show_minimap": false,
 	"show_panel_on_build": true,
 	"tab_size": 2,
+	"theme": "Soda Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": false

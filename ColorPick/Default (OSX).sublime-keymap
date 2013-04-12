@@ -1,0 +1,4 @@
+[
+  { "keys": ["option+c"], "command": "color_pick" }
+]
+
