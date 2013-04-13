@@ -8,6 +8,8 @@
     <array><dict><key>name</key><string>mon_color</string><key>scope</key><string>mcol_0000ffFF</string><key>settings</key><dict><key>background</key><string>#0000ffFF</string><key>caret</key><string>#FFFFFFFF</string><key>foreground</key><string>#FFFFFFFF</string></dict></dict>
 <dict><key>name</key><string>mon_color</string><key>scope</key><string>mcol_DDAADDFF</string><key>settings</key><dict><key>background</key><string>#DDAADDFF</string><key>caret</key><string>#000000FF</string><key>foreground</key><string>#000000FF</string></dict></dict>
 <dict><key>name</key><string>mon_color</string><key>scope</key><string>mcol_0000ffFF</string><key>settings</key><dict><key>background</key><string>#0000ffFF</string><key>caret</key><string>#FFFFFFFF</string><key>foreground</key><string>#FFFFFFFF</string></dict></dict>
+<dict><key>name</key><string>mon_color</string><key>scope</key><string>mcol_DDAADDFF</string><key>settings</key><dict><key>background</key><string>#DDAADDFF</string><key>caret</key><string>#000000FF</string><key>foreground</key><string>#000000FF</string></dict></dict>
+<dict><key>name</key><string>mon_color</string><key>scope</key><string>mcol_0000ffFF</string><key>settings</key><dict><key>background</key><string>#0000ffFF</string><key>caret</key><string>#FFFFFFFF</string><key>foreground</key><string>#FFFFFFFF</string></dict></dict>
 <dict><key>name</key><string>mon_color</string><key>scope</key><string>mcol_0000ffFF</string><key>settings</key><dict><key>background</key><string>#0000ffFF</string><key>caret</key><string>#FFFFFFFF</string><key>foreground</key><string>#FFFFFFFF</string></dict></dict>
 
         <dict>

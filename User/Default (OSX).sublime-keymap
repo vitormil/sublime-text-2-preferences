@@ -1,3 +1,4 @@
+// @voliveira
 [
   { "keys": ["super+."], "command": "reveal_in_side_bar" },
   { "keys": ["super+shift+c", "super+shift+c"], "command": "navigate_to_definition" },
@@ -24,8 +25,19 @@
     ]
   },
 
-  {"keys": ["f12"], "command": "navigate_to_definition"},
-  {"keys": ["option+f12"], "command": "rebuild_tags"},
+  {"keys": ["'"], "command": "insert_snippet", "args": {"contents": "\"${0:$SELECTION}\""}, "context":
+    [
+      {"key": "setting.auto_match_enabled", "operator": "equal", "operand": true},
+      {"key": "selection_empty", "operator": "equal", "operand": false, "match_all": true}
+    ]
+  },
 
-  {"keys": ["super+option+d"], "command": "delete_file", "args": {"files": []} }
+  {"keys": ["option+f12"], "command": "rebuild_tags"},
+  {"keys": ["f12"], "command": "navigate_to_definition"},
+  {"keys": ["super+f12"], "command": "jump_back"},
+
+  {"keys": ["option+q"], "command": "change_quotes"},
+  {"keys": ["option+i"], "command": "expand_selection_to_quotes"},
+
+  { "keys": ["super+\\"], "command": "valign" }
 ]

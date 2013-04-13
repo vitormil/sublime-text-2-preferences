@@ -2,34 +2,10 @@
 	"fade_fold_buttons": false,
 	"auto_complete_commit_on_tab": true,
 	"auto_complete_delay": 10,
-	"auto_complete_triggers":
-	[
-		{
-			"characters": ".",
-			"selector": "source.ruby"
-		}
-	],
+	"auto_complete_triggers":[{"characters": ".", "selector": "source.ruby"}, {"selector": "text.html", "characters": "<"}],
 	"auto_complete_with_fields": true,
 	"auto_match_enabled": true,
-	"binary_file_patterns":
-	[
-		"*.jpg",
-		"*.jpeg",
-		"*.png",
-		"*.gif",
-		"*.ttf",
-		"*.tga",
-		"*.dds",
-		"*.ico",
-		"*.eot",
-		"*.pdf",
-		"*.swf",
-		"*.jar",
-		"*.zip",
-		"*.gem",
-		"*.tar",
-		"*.tar.gz"
-	],
+	"binary_file_patterns": ["*.jpg", "*.jpeg","*.png","*.gif","*.ttf","*.tga","*.dds","*.ico", "*.eot","*.pdf","*.swf","*.jar","*.zip","*.gem","*.tar","*.tar.gz"],
 	"bold_folder_labels": true,
 	"caret_style": "phase",
 	"color_scheme": "Packages/User/colour-schemes/Espresso Soda.tmTheme",

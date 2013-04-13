@@ -12,35 +12,29 @@
                 "children":
                 [
                     {
-                        "caption": "Alignment",
+                        "caption": "Emmet",
                         "children":
                         [
                             {
-                                "command": "open_file", 
-                                "args": {"file": "${packages}/Alignment/Base File.sublime-settings"},
+                                "command": "open_file", "args":
+                                {
+                                    "file": "${packages}/Emmet/Emmet.sublime-settings"
+                                },
                                 "caption": "Settings – Default"
                             },
                             {
-                                "command": "open_file", 
-                                "args": {"file": "${packages}/User/Base File.sublime-settings"},
+                                "command": "open_file", "args":
+                                {
+                                    "file": "${packages}/User/Emmet.sublime-settings"
+                                },
                                 "caption": "Settings – User"
                             },
-                            {
-                                "command": "open_file_settings", 
-                                "caption": "Settings – Syntax Specific – User"
-                            },
+                            { "caption": "-" },
+                            { "caption": "-" },
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/Alignment/Default (Windows).sublime-keymap",
-                                    "platform": "Windows"
-                                },
-                                "caption": "Key Bindings – Default"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/Alignment/Default (OSX).sublime-keymap",
+                                    "file": "${packages}/Emmet/Default (OSX).sublime-keymap",
                                     "platform": "OSX"
                                 },
                                 "caption": "Key Bindings – Default"
@@ -48,7 +42,7 @@
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/Alignment/Default (Linux).sublime-keymap",
+                                    "file": "${packages}/Emmet/Default (Linux).sublime-keymap",
                                     "platform": "Linux"
                                 },
                                 "caption": "Key Bindings – Default"
@@ -56,10 +50,10 @@
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/User/Default (Windows).sublime-keymap",
+                                    "file": "${packages}/Emmet/Default (Windows).sublime-keymap",
                                     "platform": "Windows"
                                 },
-                                "caption": "Key Bindings – User"
+                                "caption": "Key Bindings – Default"
                             },
                             {
                                 "command": "open_file",
@@ -74,6 +68,14 @@
                                 "args": {
                                     "file": "${packages}/User/Default (Linux).sublime-keymap",
                                     "platform": "Linux"
+                                },
+                                "caption": "Key Bindings – User"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Windows).sublime-keymap",
+                                    "platform": "Windows"
                                 },
                                 "caption": "Key Bindings – User"
                             },
