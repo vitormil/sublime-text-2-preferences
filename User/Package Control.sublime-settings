@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1365807283,
+	"auto_upgrade_last_run": 1366247723,
 	"installed_packages":
 	[
 		"AdvancedNewFile",
@@ -23,6 +23,7 @@
 		"Hayaku - tools for writing CSS faster",
 		"Http Requester",
 		"Indent XML",
+		"JavaScript Console",
 		"jQuery",
 		"jQuery Snippets pack",
 		"JsFormat",
