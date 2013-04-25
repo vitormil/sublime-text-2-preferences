@@ -44,5 +44,11 @@
   {"keys": ["option+i"], "command": "expand_selection_to_quotes"},
 
   { "keys": ["super+\\"], "command": "valign" },
-  { "keys": ["option+c"], "command": "color_pick" }
+  { "keys": ["option+c"], "command": "color_pick" },
+
+  { "keys": ["super+b", "super+n"], "command": "next_bookmark" },
+  { "keys": ["super+b", "super+p"], "command": "prev_bookmark" },
+  { "keys": ["super+b", "super+t"], "command": "toggle_bookmark" },
+  { "keys": ["super+b", "super+c"], "command": "clear_bookmarks" },
+  { "keys": ["super+b", "super+a"], "command": "select_all_bookmarks" }
 ]
