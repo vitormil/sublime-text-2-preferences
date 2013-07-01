@@ -78,9 +78,8 @@
 	[
 		"JsFormat",
 		"Vintage",
-		"RubyCheckOnSave",
-		"SublimeLinter",
-		"TernJS"
+		"TernJS",
+		"RubyCheckOnSave"
 	],
 	"indent_guide_options":
 	[

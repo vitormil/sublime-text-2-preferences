@@ -71,7 +71,7 @@
         with the outline color, and "none" disables all outline styles
         (useful if "sublimelinter_gutter_marks" is set).
     */
-    "sublimelinter_mark_style": "outline",
+    "sublimelinter_mark_style": "none",
 
     /*
         If true, lines with errors or warnings will be filled in with the
@@ -85,7 +85,21 @@
     "sublimelinter_fill_outlines": false,
 
     // If true, lines with errors or warnings will have a gutter mark.
-    "sublimelinter_gutter_marks": false,
+    "sublimelinter_gutter_marks": true,
+
+    /*
+        Choose the theme for gutter marks; available built-in options are:
+        "alpha", "bright", "dark", "hard" and "simple"
+
+        Anything else will be treated as a path to a set of images.
+        For instance, setting the value to "../User/my-awesome-theme"
+        would cause SublimeLinter to look for the images:
+        "../User/my-awesome-theme-illegal.png",
+        "../User/my-awesome-theme-violation.png",
+        "../User/my-awesome-theme-warning.png"
+        These images should all be approximately 32x32px.
+    */
+    "sublimelinter_gutter_marks_theme": "simple",
 
     // If true, the find next/previous error commands will wrap.
     "sublimelinter_wrap_find": true,
@@ -93,7 +107,7 @@
     // If true, when the file is saved any errors will appear in a popup list
     "sublimelinter_popup_errors_on_save": false,
 
-    // Javascript linter: "gjslint" to use the closure javascript linter (if available),
+    // JavaScript linter: "gjslint" to use the closure javascript linter (if available),
     // or either "jshint" or "jslint" to use a built in linter.
     "javascript_linter": "jshint",
 

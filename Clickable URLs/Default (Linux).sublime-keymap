@@ -1,0 +1,3 @@
+[
+    { "keys": ["ctrl+alt+enter"], "command": "open_url" }
+]

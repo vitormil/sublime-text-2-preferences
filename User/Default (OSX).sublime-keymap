@@ -50,5 +50,7 @@
   { "keys": ["super+b", "super+p"], "command": "prev_bookmark" },
   { "keys": ["super+b", "super+t"], "command": "toggle_bookmark" },
   { "keys": ["super+b", "super+c"], "command": "clear_bookmarks" },
-  { "keys": ["super+b", "super+a"], "command": "select_all_bookmarks" }
+  { "keys": ["super+b", "super+a"], "command": "select_all_bookmarks" },
+
+  { "keys": ["+super+shift+l"], "command": "find_next_lint_error" }
 ]
