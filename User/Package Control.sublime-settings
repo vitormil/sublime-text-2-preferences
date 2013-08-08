@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1373157344,
+	"auto_upgrade_last_run": 1375836425,
 	"installed_packages":
 	[
 		"AdvancedNewFile",
@@ -23,6 +23,7 @@
 		"Git",
 		"GitGutter",
 		"Hayaku - tools for writing CSS faster",
+		"HTML-CSS-JS Prettify",
 		"Http Requester",
 		"Indent XML",
 		"JavaScript Console",

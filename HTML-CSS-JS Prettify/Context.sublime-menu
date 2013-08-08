@@ -1,0 +1,13 @@
+[{
+  "caption": "HTML/CSS/JS Prettify",
+  "children": [{
+    "caption": "Prettify Code",
+    "command": "htmlprettify"
+  }, {
+    "caption": "Set Prettify Preferences",
+    "command": "htmlprettify_set_prefs"
+  }, {
+    "caption": "Set `node` Path",
+    "command": "htmlprettify_set_node_path"
+  }]
+}]
