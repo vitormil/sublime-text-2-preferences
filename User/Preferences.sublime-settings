@@ -63,16 +63,12 @@
 		".sass-cache",
 		"node_modules"
 	],
-	// OS X
-	"font_face": "Menlo",
-	"font_size": 16.0,
-	// Windows
 	"font_face": "Bitstream Vera Sans Mono",
-	"font_size": 14.0,
 	"font_options":
 	[
 		"subpixel_antialias"
 	],
+	"font_size": 14.0,
 	"hayaku_CSS_prefixes_disable": true,
 	"hayaku_CSS_whitespace_after_colon": " ",
 	"highlight_line": true,
@@ -107,6 +103,6 @@
 	"theme": "Soda Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": false,
-	"update_check": false
+	"update_check": false,
+	"word_wrap": false
 }
