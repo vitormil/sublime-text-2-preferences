@@ -63,14 +63,20 @@
 		".sass-cache",
 		"node_modules"
 	],
+<<<<<<< HEAD
 	"font_face": "Menlo",
-    "font_face_windows": "Bitstream Vera Sans Mono",
+=======
+	"font_face": "Bitstream Vera Sans Mono",
+>>>>>>> 50514ba39114c79aae02435c5cabf99660de777f
 	"font_options":
 	[
 		"subpixel_antialias"
 	],
+<<<<<<< HEAD
 	"font_size": 21.0,
-    "font_size_windows": 14.0,
+=======
+	"font_size": 14.0,
+>>>>>>> 50514ba39114c79aae02435c5cabf99660de777f
 	"hayaku_CSS_prefixes_disable": true,
 	"hayaku_CSS_whitespace_after_colon": " ",
 	"highlight_line": true,

@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+	"auto_upgrade_last_run": 1376354775,
+=======
 	"auto_upgrade_last_run": 1376575048,
+>>>>>>> 50514ba39114c79aae02435c5cabf99660de777f
 	"installed_packages":
 	[
 		"AdvancedNewFile",
