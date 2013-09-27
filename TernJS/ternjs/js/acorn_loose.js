@@ -32,7 +32,7 @@
 (function(mod) {
   if (typeof exports == "object" && typeof module == "object") return mod(exports, require("./acorn")); // CommonJS
   if (typeof define == "function" && define.amd) return define(["exports", "./acorn"], mod); // AMD
-  mod(self.acorn || (self.acorn = {}), self.acorn); // Plain browser env
+  mod(this.acorn || (this.acorn = {}), this.acorn); // Plain browser env
 })(function(exports, acorn) {
   "use strict";
 
@@ -111,7 +111,13 @@
         }
         resetTo(pos);
         if (replace === true) replace = {start: pos, end: pos, type: tt.name, value: "✖"};
-        if (replace) return replace;
+        if (replace) {
+          if (options.locations) {
+            replace.startLoc = acorn.getLineInfo(input, replace.start);
+            replace.endLoc = acorn.getLineInfo(input, replace.end);
+          }
+          return replace;
+        }
       }
     }
   }
@@ -123,15 +129,22 @@
     fetchToken.jumpTo(pos, reAllowed);
   }
 
+  function copyToken(token) {
+    var copy = {start: token.start, end: token.end, type: token.type, value: token.value};
+    if (options.locations) {
+      copy.startLoc = token.startLoc;
+      copy.endLoc = token.endLoc;
+    }
+    return copy;
+  }
+
   function lookAhead(n) {
     // Copy token objects, because fetchToken will overwrite the one
     // it returns, and in this case we still need it
     if (!ahead.length)
-      token = {start: token.start, end: token.end, type: token.type, value: token.value};
-    while (n > ahead.length) {
-      var tok = readToken();
-      ahead.push({start: tok.from, end: tok.end, type: tok.type, value: tok.value});
-    }
+      token = copyToken(token);
+    while (n > ahead.length)
+      ahead.push(copyToken(readToken()));
     return ahead[n-1];
   }
 
@@ -168,16 +181,16 @@
     }
   }
 
-  function closesBlock(closeTok, indent, line) {
+  function closes(closeTok, indent, line, blockHeuristic) {
     if (token.type === closeTok || token.type === tt.eof) return true;
     if (line != curLineStart && curIndent < indent && tokenStartsLine() &&
-        (nextLineStart >= input.length ||
+        (!blockHeuristic || nextLineStart >= input.length ||
          indentationAfter(nextLineStart) < indent)) return true;
     return false;
   }
 
   function tokenStartsLine() {
-    for (var p = token.start - 1; p > curLineStart; --p) {
+    for (var p = token.start - 1; p >= curLineStart; --p) {
       var ch = input.charCodeAt(p);
       if (ch !== 9 && ch !== 32) return false;
     }
@@ -190,8 +203,8 @@
     this.end = null;
   }
 
-  function node_loc_t() {
-    this.start = token.startLoc;
+  function node_loc_t(start) {
+    this.start = start || token.startLoc || {line: 1, column: 0};
     this.end = null;
     if (sourceFile !== null) this.source = sourceFile;
   }
@@ -200,11 +213,16 @@
     var node = new node_t(token.start);
     if (options.locations)
       node.loc = new node_loc_t();
-    return node
+    return node;
   }
+
   function startNodeFrom(other) {
-    return new node_t(other.start);
+    var node = new node_t(other.start);
+    if (options.locations)
+      node.loc = new node_loc_t(other.loc.start);
+    return node;
   }
+
   function finishNode(node, type) {
     node.type = type;
     node.end = lastEnd;
@@ -213,11 +231,20 @@
     return node;
   }
 
+  function getDummyLoc() {
+    if (options.locations) {
+      var loc = new node_loc_t();
+      loc.end = loc.start;
+      return loc;
+    }
+  };
+
   function dummyIdent() {
-    var dummy = new node_t(0);
+    var dummy = new node_t(token.start);
     dummy.type = "Identifier";
-    dummy.end = 0;
+    dummy.end = token.start;
     dummy.name = "✖";
+    dummy.loc = getDummyLoc();
     return dummy;
   }
   function isDummy(node) { return node.name == "✖"; }
@@ -264,60 +291,60 @@
     var starttype = token.type, node = startNode();
 
     switch (starttype) {
-    case tt.break: case tt.continue:
+    case tt._break: case tt._continue:
       next();
-      var isBreak = starttype === tt.break;
+      var isBreak = starttype === tt._break;
       node.label = token.type === tt.name ? parseIdent() : null;
       semicolon();
       return finishNode(node, isBreak ? "BreakStatement" : "ContinueStatement");
 
-    case tt.debugger:
+    case tt._debugger:
       next();
       semicolon();
       return finishNode(node, "DebuggerStatement");
 
-    case tt.do:
+    case tt._do:
       next();
       node.body = parseStatement();
-      node.test = eat(tt.while) ? parseParenExpression() : dummyIdent();
+      node.test = eat(tt._while) ? parseParenExpression() : dummyIdent();
       semicolon();
       return finishNode(node, "DoWhileStatement");
 
-    case tt.for:
+    case tt._for:
       next();
       pushCx();
       expect(tt.parenL);
       if (token.type === tt.semi) return parseFor(node, null);
-      if (token.type === tt.var) {
+      if (token.type === tt._var) {
         var init = startNode();
         next();
         parseVar(init, true);
-        if (init.declarations.length === 1 && eat(tt.in))
+        if (init.declarations.length === 1 && eat(tt._in))
           return parseForIn(node, init);
         return parseFor(node, init);
       }
       var init = parseExpression(false, true);
-      if (eat(tt.in)) {return parseForIn(node, checkLVal(init));}
+      if (eat(tt._in)) {return parseForIn(node, checkLVal(init));}
       return parseFor(node, init);
 
-    case tt.function:
+    case tt._function:
       next();
       return parseFunction(node, true);
 
-    case tt.if:
+    case tt._if:
       next();
       node.test = parseParenExpression();
       node.consequent = parseStatement();
-      node.alternate = eat(tt.else) ? parseStatement() : null;
+      node.alternate = eat(tt._else) ? parseStatement() : null;
       return finishNode(node, "IfStatement");
 
-    case tt.return:
+    case tt._return:
       next();
       if (eat(tt.semi) || canInsertSemicolon()) node.argument = null;
       else { node.argument = parseExpression(); semicolon(); }
       return finishNode(node, "ReturnStatement");
 
-    case tt.switch:
+    case tt._switch:
       var blockIndent = curIndent, line = curLineStart;
       next();
       node.discriminant = parseParenExpression();
@@ -325,9 +352,9 @@
       pushCx();
       expect(tt.braceL);
 
-      for (var cur; !closesBlock(tt.braceR, blockIndent, line);) {
-        if (token.type === tt.case || token.type === tt.default) {
-          var isCase = token.type === tt.case;
+      for (var cur; !closes(tt.braceR, blockIndent, line, true);) {
+        if (token.type === tt._case || token.type === tt._default) {
+          var isCase = token.type === tt._case;
           if (cur) finishNode(cur, "SwitchCase");
           node.cases.push(cur = startNode());
           cur.consequent = [];
@@ -349,17 +376,17 @@
       eat(tt.braceR);
       return finishNode(node, "SwitchStatement");
 
-    case tt.throw:
+    case tt._throw:
       next();
       node.argument = parseExpression();
       semicolon();
       return finishNode(node, "ThrowStatement");
 
-    case tt.try:
+    case tt._try:
       next();
       node.block = parseBlock();
-      node.handlers = [];
-      while (token.type === tt.catch) {
+      node.handler = null;
+      if (token.type === tt._catch) {
         var clause = startNode();
         next();
         expect(tt.parenL);
@@ -367,25 +394,25 @@
         expect(tt.parenR);
         clause.guard = null;
         clause.body = parseBlock();
-        node.handlers.push(finishNode(clause, "CatchClause"));
+        node.handler = finishNode(clause, "CatchClause");
       }
-      node.finalizer = eat(tt.finally) ? parseBlock() : null;
-      if (!node.handlers.length && !node.finalizer) return node.block;
+      node.finalizer = eat(tt._finally) ? parseBlock() : null;
+      if (!node.handler && !node.finalizer) return node.block;
       return finishNode(node, "TryStatement");
 
-    case tt.var:
+    case tt._var:
       next();
       node = parseVar(node);
       semicolon();
       return node;
 
-    case tt.while:
+    case tt._while:
       next();
       node.test = parseParenExpression();
       node.body = parseStatement();
       return finishNode(node, "WhileStatement");
 
-    case tt.with:
+    case tt._with:
       next();
       node.object = parseParenExpression();
       node.body = parseStatement();
@@ -422,7 +449,7 @@
     expect(tt.braceL);
     var blockIndent = curIndent, line = curLineStart;
     node.body = [];
-    while (!closesBlock(tt.braceR, blockIndent, line))
+    while (!closes(tt.braceR, blockIndent, line, true))
       node.body.push(parseStatement());
     popCx();
     eat(tt.braceR);
@@ -515,7 +542,7 @@
   function parseExprOp(left, minPrec, noIn, indent, line) {
     if (curLineStart != line && curIndent < indent && tokenStartsLine()) return left;
     var prec = token.type.binop;
-    if (prec != null && (!noIn || token.type !== tt.in)) {
+    if (prec != null && (!noIn || token.type !== tt._in)) {
       if (prec > minPrec) {
         var node = startNodeFrom(left);
         node.left = left;
@@ -601,7 +628,7 @@
 
   function parseExprAtom() {
     switch (token.type) {
-    case tt.this:
+    case tt._this:
       var node = startNode();
       next();
       return finishNode(node, "ThisExpression");
@@ -614,10 +641,10 @@
       next();
       return finishNode(node, "Literal");
 
-    case tt.null: case tt.true: case tt.false:
+    case tt._null: case tt._true: case tt._false:
       var node = startNode();
       node.value = token.type.atomValue;
-      node.raw = token.type.keyword
+      node.raw = token.type.keyword;
       next();
       return finishNode(node, "Literal");
 
@@ -639,12 +666,12 @@
     case tt.braceL:
       return parseObj();
 
-    case tt.function:
+    case tt._function:
       var node = startNode();
       next();
       return parseFunction(node, false);
 
-    case tt.new:
+    case tt._new:
       return parseNew();
 
     default:
@@ -671,7 +698,7 @@
     pushCx();
     next();
     var propIndent = curIndent, line = curLineStart;
-    while (!closesBlock(tt.braceR, propIndent, line)) {
+    while (!closes(tt.braceR, propIndent, line)) {
       var name = parsePropertyName();
       if (!name) { if (isDummy(parseExpression(true))) next(); eat(tt.comma); continue; }
       var prop = {key: name}, isGetSet = false, kind;
@@ -680,7 +707,7 @@
         kind = prop.kind = "init";
       } else if (options.ecmaVersion >= 5 && prop.key.type === "Identifier" &&
                  (prop.key.name === "get" || prop.key.name === "set")) {
-        isGetSet = sawGetSet = true;
+        isGetSet = true;
         kind = prop.kind = prop.key.name;
         prop.key = parsePropertyName() || dummyIdent();
         prop.value = parseFunction(startNode(), false);
@@ -728,12 +755,12 @@
   }
 
   function parseExprList(close) {
-    var indent = curIndent + 1, line = curLineStart, elts = [];
+    var indent = curIndent, line = curLineStart, elts = [], continuedLine = nextLineStart;
     next(); // Opening bracket
-    while (!closesBlock(close, indent, line)) {
+    while (!closes(close, indent + (curLineStart <= continuedLine ? 1 : 0), line)) {
       var elt = parseExpression(true);
       if (isDummy(elt)) {
-        if (closesBlock(close, indent, line)) break;
+        if (closes(close, indent, line)) break;
         next();
       } else {
         elts.push(elt);

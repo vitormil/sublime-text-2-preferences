@@ -18,7 +18,11 @@ Installation through [package control](http://wbond.net/sublime_packages/package
 ## Usage
 This plugin can be run through specifying commands on the command palette. The commands are listed in alphabetical order, beginning with modifiers (alt, cntl, shift, super), followed by keys. The commands are as follows:
 
-`FindKeyConflicts: All Key Maps`:
+`FindKeyConflicts: All Key Maps to Quick Panel`:
+
+Displays all key mappings in a quick panel. Selecting an entry will open a buffer with additional details about the key binding.
+
+`FindKeyConflicts: All Key Maps to Buffer`:
 
 Displays all key mappings in a buffer.
 
@@ -38,8 +42,20 @@ Displays key bindings that overlap with mutli part key bindings in a buffer. For
 
 Displays all conflicts in a buffer. This option will include both direct and overlapping conflicts.
 
+`FindKeyConflicts: Single Package Conflicts`:
+
+Displays conflicts that involve the selected package.
+
+`FindKeyConflicts: Multiple Package Conflicts`:
+
+Displays conflicts that involve the selected packages. Select `(Done)` when you are done selecting packages. You may use `(View Selected)` and `(View Packages)` to view the selected packages and the package list respsectively.  Also, you may remove packages from the selected list by pressing `enter` when viewing the selected packages list.
+
+`FindKeyConflicts: Command Search`:
+
+Display a list of the packages containing keymap files. After selecting a package, a list of commands will be displayed in the quick panel. Selecting a command from the subsequent list will run the command.
+
 ## Settings
-`ignored_packages`: 
+`ignored_packages`:
 
 An array containing packages to ignore. Note that the `ignored_packages` in the Preferences are automatically added to this list.
 
@@ -55,10 +71,7 @@ Array containing key patterns to ignore. These should follow the same guidelines
 
 Boolean value used to determine if internal command conflicts to a package should be displayed.
 
-`debug`:
-
-Setting to control if debugging is enabled.
-
-
 ## Notes
 Thanks to [bizoo](https://github.com/bizoo) for sharing their work with me.
+Thanks to [getify](https://github.com/getify) for the json minifier.
+Thanks to [facelessuser](https://github.com/facelessuser) for the strip dangling commas work.

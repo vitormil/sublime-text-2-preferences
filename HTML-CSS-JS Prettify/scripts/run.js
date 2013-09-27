@@ -66,6 +66,9 @@
   var sourceParent = path.dirname(sourceFolder);
   var jsbeautifyrcPath;
 
+  // Older versions of node has `existsSync` in the path module, not fs. Meh.
+  fs.existsSync = fs.existsSync || path.existsSync;
+
   // Try and get some persistent options from the plugin folder.
   if (fs.existsSync(jsbeautifyrcPath = pluginFolder + path.sep + jsbeautifyrc)) {
     setOptions(jsbeautifyrcPath, options);
@@ -90,14 +93,14 @@
   function isHTML(path, data) {
     return path.match(/\.html?$/) ||
       path.match(/\.xhtml?$/) ||
-      path.match(/\.xml?$/) ||
-      (path == "?" && data.match(/^\s*</));
+      path.match(/\.xml$/) ||
+      (path == "?" && data.match(/^\s*</)); // First non-whitespace character is &lt;
   }
 
   function isCSS(path, data) {
-    return path.match(/\.css?$/) ||
-      path.match(/\.sass?$/) ||
-      path.match(/\.less?$/);
+    return path.match(/\.css$/) ||
+      path.match(/\.sass$/) ||
+      path.match(/\.less$/);
   }
 
   function isJS(path, data) {
@@ -106,7 +109,7 @@
       path.match(/\.jshintrc$/) ||
       path.match(/\.jsbeautifyrc$/) ||
       path.match(/\.sublime-/) ||
-      (path == "?" && !data.match(/^\s*</));
+      (path == "?" && !data.match(/^\s*</)); // First non-whitespace character is not &lt;
   }
 
   // Read the source file and, when complete, beautify the code.

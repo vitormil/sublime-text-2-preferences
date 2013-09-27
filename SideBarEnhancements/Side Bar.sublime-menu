@@ -8,6 +8,7 @@
 	{ "caption": "Open / Run",              "id": "side-bar-open",             "command": "side_bar_open",             "args": {"paths": []} },
 	{ "caption": "Open In Browser",              "id": "side-bar-open-in-browser",             "command": "side_bar_open_in_browser",             "args": {"paths": []} },
 	{ "caption": "Open In New Window",              "id": "side-bar-open-in-new-window",             "command": "side_bar_open_in_new_window",             "args": {"paths": []} },
+	{ "caption": "Open With Finder",              "id": "side-bar-open-with-finde",             "command": "side_bar_open_with_finder",             "args": {"paths": []} },
 	{ "caption": "Open With",        "id": "side-bar-files-open-with",
 
 		"children":
@@ -43,6 +44,7 @@
 	{ "caption": "Copy",              "id": "side-bar-clip-copy",        "command": "side_bar_copy",             "args": {"paths": []} },
 	{ "caption": "Copy Name",         "id": "side-bar-clip-copy-name",                     "command": "side_bar_copy_name",                         "args": {"paths": []} },
 	{ "caption": "Copy Path",         "id": "side-bar-clip-copy-path",    "command": "side_bar_copy_path_absolute_from_project_encoded",        "args": {"paths": []} },
+	{ "caption": "Copy Dir Path",     "id": "side-bar-clip-copy-dir-path",                     "command": "side_bar_copy_dir_path",                         "args": {"paths": []} },
 	{ "caption": "Copy as Text",      "id": "side-bar-clip-copy-as",
 		"children":
 		[
@@ -91,6 +93,7 @@
 	{ "caption": "-",                 "id": "side-bar-rename-move-separator" },
 
 	{ "caption": "Delete",            "id": "side-bar-delete",           "command": "side_bar_delete",           "args": {"paths": []} },
+	{ "caption": "Empty",            "id": "side-bar-emptry",           "command": "side_bar_empty",           "args": {"paths": []} },
 	{ "caption": "-",                 "id": "side-bar-delete-separator" },
 
   { "caption": "Refresh",           "id": "side-bar-refresh",          "command": "refresh_folder_list" },
@@ -99,11 +102,12 @@
 		"children":
 		[
 			{ "caption": "Edit Project", "id": "side-bar-project-open-file",      "command": "side_bar_project_open_file",           "args": {"paths": []} },
+			{ "caption": "Edit Projects Preview URLs", "id": "side-bar-project-preview-url",      "command": "side_bar_project_open_project_preview_urls_file",           "args": {"paths": []} },
 			{ "caption": "-",                					"id": "side-bar-project-open-file-separator" },
 			{ "caption": "Promote as Project Folder", "id": "side-bar-project-item-add",     "command": "side_bar_project_item_add",        "args": {"paths": []} },
 			{ "caption": "Exclude From Project",			"id": "side-bar-project-item-exclude",   "command": "side_bar_project_item_exclude",        "args": {"paths": []} },
 			{ "caption": "-",                					"id": "side-bar-project-item-separator" },
-			{ "caption": "Remove Folder from Project", "command": "remove_folder", "args": { "dirs": []} },
+			{ "caption": "Remove Folder from Project", "id": "side-bar-project-item-remove-folder", "command": "side_bar_project_item_remove_folder", "args": { "paths": []} },
       { "command": "prompt_add_folder", "caption": "Add Folder to Project…", "mnemonic": "d" }
 
 		]

@@ -15,12 +15,12 @@ function startServer(project, libs) {
 	var files = project && project.files ? project.files : [];
 	
 	if (!(project.id in ternServers)) {
-		log('Staring TernJS server for ' + project.id + ' with ' + libs.length + ' libs and ' + files.length + ' files');
+		log('Starting TernJS server for ' + project.id + ' with ' + libs.length + ' libs and ' + files.length + ' files');
 		var makeDef = function(v) {
 			return _.isString(v) ? JSON.parse(v) : v;
 		};
 
-		var env = _.map(libs || [], makeDef);
+		var defs = _.map(libs || [], makeDef);
 		var pluginOptions = {};
 
 		if (project.config && project.config.plugins) {
@@ -29,7 +29,7 @@ function startServer(project, libs) {
 				var plugin = loadPlugin(JSON.stringify(data), project);
 				if (plugin) {
 					if (plugin.definitions) {
-						env.push(makeDef(plugin.definitions));
+						defs.push(makeDef(plugin.definitions));
 					}
 
 					pluginOptions['' + plugin.id] = plugin.config || {};
@@ -39,25 +39,29 @@ function startServer(project, libs) {
 
 		ternServers[project.id] = new tern.Server({
 			getFile: function(name, callback) {
-				// log('Requesting file ' + name);
+				var content = sublimeReadFile(name, project) || '';
+				if (callback) {
+					callback(null, content);
+				}
 				return sublimeReadFile(name, project) || '';
 			}, 
-			environment: env,
-			pluginOptions: pluginOptions,
+			defs: defs,
+			plugins: pluginOptions,
 			debug: false,
-			async: false
+			async: false,
+			projectDir: project.dir
 		});
 	}
 
 	if (project.files) {
 		var updated = syncFiles(ternServers[project.id], project.files);
-		if (updated) {
-			// server was updated. Initiate a fake request 
-			// to make sure that first completions request won't take
-			// too much time
-			var req = buildFakeRequest();
-			ternServers[project.id].request(req, function() {});
-		}
+		// if (updated) {
+		// 	// server was updated. Initiate a fake request 
+		// 	// to make sure that first completions request won't take
+		// 	// too much time
+		// 	var req = buildFakeRequest();
+		// 	ternServers[project.id].request(req, function() {});
+		// }
 	}
 }
 
@@ -182,6 +186,7 @@ function buildRequest(view, query, allowFragments) {
 			type: 'full',
 			text: sublimeViewContents(view)
 		});
+		query.file = '#' + (files.length - 1);
 	}
 
 	return {
@@ -213,6 +218,10 @@ function sendRequest(request, projectId) {
 }
 
 function forceFileUpdate(view, projectId) {
+	if (!(projectId in ternServers)) {
+		return;
+	}
+	
 	var req = buildFakeRequest();
 	req.files.push({
 		name: sublimeGetFileNameFromView(view),

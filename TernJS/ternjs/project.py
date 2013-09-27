@@ -82,13 +82,19 @@ def get_ternjs_files(project, config=None):
 	if config is None:
 		config = get_ternjs_config(project_path)
 
-	proj_dir = os.path.dirname(project_path)
+	proj_dir = config.get('dir', os.path.dirname(project_path))
 	fileset = FileSet(directory=proj_dir,
 					  include=config.get('include', ['**/*.js']),
 					  exclude=config.get('exclude', None))
 
-	return [f for f in fileset.qualified_files()]
+	return [resolve_project_file_path(f, proj_dir) for f in fileset.qualified_files()]
 
+def resolve_project_file_path(f, project_dir):
+	if f.startswith(project_dir):
+		return os.path.relpath(f, project_dir)
+
+	return f
+		
 
 def projects_from_opened_files(window=None):
 	"Returns list of projects for all opened files in editor"
@@ -100,11 +106,16 @@ def projects_from_opened_files(window=None):
 	result = set()
 	for wnd in windows:
 		for view in wnd.views():
-			f = view.file_name()
-			if f:
-				proj = locate_project(f, result)
-				if proj:
-					result.add(proj)
+			proj = None
+			if hasattr(view, 'project_file_name'):
+				# ST3 API: get project file from opened view
+				proj = view.project_file_name()
+			else:
+				f = view.file_name()
+				if f:
+					proj = locate_project(f, result)
+			if proj:
+				result.add(proj)
 
 	return list(result)
 
@@ -125,6 +136,7 @@ def info(project_id):
 	config = get_ternjs_config(project_id)
 	return {
 		'id': project_id,
+		'dir':  config.get('dir', os.path.dirname(project_id)),
 		'config': config,
 		'files': get_ternjs_files(project_id, config)
 	}
@@ -149,7 +161,12 @@ def project_for_view(view):
 
 	# check if file inside project
 	for p in projects:
-		if file_name in p['files']:
+		proj_dir = p.get('dir')
+		proj_files = p['files']
+		if proj_dir:
+			proj_files = [os.path.join(proj_dir, pfile) for pfile in proj_files]
+
+		if file_name in proj_files:
 			return p
 
 	# file is not inside any known project: it might be a new file

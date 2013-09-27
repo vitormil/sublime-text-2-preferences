@@ -29,10 +29,6 @@
     ]
   },
 
-  // CTAGS
-  {"keys": ["super+shift+period"], "command": "navigate_to_definition"},
-  {"keys": ["super+k", "super+r"], "command": "rebuild_tags"},
-
   { "keys": ["super+shift+b"], "command": "anypreter" },
   { "keys": ["super+."], "command": "reveal_in_side_bar" },
   { "keys": ["ctrl+shift+l"], "command": "find_next_lint_error" }

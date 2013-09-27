@@ -1,12 +1,12 @@
-# HTML, CSS and JavaScript code formatter for Sublime Text 2 and 3 via node.js
+# HTML, CSS, JavaScript and JSON code formatter for Sublime Text 2 and 3 via node.js
 #### [Sublime Text 3](http://www.sublimetext.com/3)
 #### [JS-beautify](https://github.com/einars/js-beautify)
 #### [Node.js download](http://nodejs.org/#download)
 
 ## About
-This is a Sublime Text 2 and 3 plugin allowing you to format your HTML, CSS and JavaScript code. It uses a set of nice beautifier scripts made by Einar Lielmanis. The formatters are written in JavaScript, so you'll need something (node.js) to interpret JavaScript code outside the browser.
+This is a Sublime Text 2 and 3 plugin allowing you to format your HTML, CSS, JavaScript and JSON code. It uses a set of nice beautifier scripts made by Einar Lielmanis. The formatters are written in JavaScript, so you'll need something (node.js) to interpret JavaScript code outside the browser.
 
-This will work with both HTML, CSS and JavaScript files.
+This will work with either HTML, CSS, JavaScript and JSON files.
 
 ## Installation
 First of all, be sure you have [node.js](http://nodejs.org/#download) installed in order to run the beautifier. After you've installed node.js, you will need to setup this plugin.
@@ -51,20 +51,28 @@ Open a HTML, CSS or JavaScript file, pop out the console in Sublime Text from Vi
 Writing commands in the console is ugly. Set up your own key combo for this, by going to Preferences -> Key Bindings - User, and adding a command in that array: `{ "keys": ["super+shift+h"], "command": "htmlprettify" }`. You can use any other command you want, thought most of them are already taken.
 
 ## Oh noez, command not found!
-If you get an error `sh: node: command not found` or similar, you don't have `node` in the right path. Try setting the absolute path to node in `HTMLPrettify.py`.
-This means from:
-`node = "node" if self.exists_in_path("node") else "/usr/local/bin/node"`
-change to
-`node = "node" if self.exists_in_path("node") else "/your/absolute/path/to/node"`
+If you get an error `sh: node: command not found` or similar, you don't have `node` in the right path. Try setting the absolute path to node in `HTMLPrettify.sublime-settings`.
 
 * `Ctrl+Shift+P` or `Cmd+Shift+P` in Linux/Windows/OS X
 * type `htmlprettify`, select `Set node Path`
+
+This means from:
+`"node_path": "/usr/local/bin/node"`
+change to
+`"node_path": "/your/absolute/path/to/node"`
 
 Simply using `node` without specifying a path sometimes doesn't work :(
 
 For example, on Linux the path could be in `/home/<user>/.nvm/<node version>/bin/node`.
 
 On Windows, the absolute path to node.exe *must* use forward slashes.
+
+## Beautify on Save
+
+To Beautify your code when saving the document, set the `format_on_save` setting to `true` in `HTMLPrettify.sublime-settings`:
+
+* `Ctrl+Shift+P` or `Cmd+Shift+P` in Linux/Windows/OS X
+* type `htmlprettify`, select `Set Plugin Options`
 
 ## Using your own .jsbeautifyrc options
 The plugin looks for a `.jsbeautifyrc` file in the same directory as the source file you're prettifying (or one directory above if it doesn't exist, or in your home folder if everything else fails) and uses those options along the default ones. [Here](https://github.com/einars/js-beautify/blob/master/js/config/defaults.json)'s an example of how it can look like.

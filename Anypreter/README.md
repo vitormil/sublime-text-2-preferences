@@ -25,11 +25,11 @@ for OS X
 	cd ~/Library/Application Support/Sublime Text 2/Packages
 
 for Linux
-
+ 
 	cd ~/.Sublime Text 2/Packages
 
 for Portable Installations
-
+	
 	cd PATH_TO_PORTABLE_INSTALLATION/Sublime Text 2/Data/Packages
 
 and clone this repository
@@ -50,7 +50,7 @@ If you are familiar with Package Control you definetly know what to do, if not, 
 ## Settings
 
 The following settings are available and optional, but the default settings should be mostly what you want if you install this plugin
-
+	
 	{
 		"php_binary_path": "YOUR_PHP_BINARY_PATH",
 		"ruby_binary_path": "YOUR_PHP_BINARY_PATH",

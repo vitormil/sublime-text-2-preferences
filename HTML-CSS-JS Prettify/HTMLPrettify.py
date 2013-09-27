@@ -11,8 +11,10 @@ except ImportError:
   pass
 
 PLUGIN_FOLDER = os.path.dirname(os.path.realpath(__file__))
+RC_FILE = ".jsbeautifyrc"
+SETTINGS_FILE = "HTMLPrettify.sublime-settings"
+KEYMAP_FILE = "Default ($PLATFORM).sublime-keymap"
 OUTPUT_VALID = b"*** HTMLPrettify output ***"
-NODE_LINE = 46
 
 class HtmlprettifyCommand(sublime_plugin.TextCommand):
   def run(self, edit):
@@ -41,11 +43,10 @@ following the instructions at:\n"""
     f.close()
 
     # Simply using `node` without specifying a path sometimes doesn't work :(
-    # http://nodejs.org/#download
-    # https://github.com/victorporof/Sublime-HTMLPrettify#oh-noez-command-not-found
-    node = "node" if exists_in_path("node") else "/usr/local/bin/node"
-    output = ""
+    settings = sublime.load_settings(SETTINGS_FILE)
+    node = "node" if exists_in_path("node") else settings.get("node_path")
 
+    output = ""
     try:
       print("Plugin folder is: " + PLUGIN_FOLDER)
       scriptPath = PLUGIN_FOLDER + "/scripts/run.js"
@@ -66,7 +67,7 @@ following the instructions at:\n"""
       # Usually, it's just node.js not being found. Try to alleviate the issue.
       msg = "Node.js was not found in the default path. Please specify the location."
       if sublime.ok_cancel_dialog(msg):
-        open_htmlprettifypy(self.view.window())
+        open_htmlprettify_sublime_settings(self.view.window())
       else:
         msg = "You won't be able to use this plugin without specifying the path to Node.js."
         sublime.error_message(msg)
@@ -84,13 +85,38 @@ following the instructions at:\n"""
       text = output.decode("utf-8")
       self.view.replace(edit, region, text)
 
-class HtmlprettifySetPrefsCommand(sublime_plugin.TextCommand):
+class PreSaveFormatListner(sublime_plugin.EventListener):
+  def on_pre_save(self, view):
+    settings = sublime.load_settings(SETTINGS_FILE)
+    if settings.get("format_on_save") == True:
+      view.run_command("htmlprettify")
+
+class HtmlprettifySetPrettifyPrefsCommand(sublime_plugin.TextCommand):
   def run(self, edit):
-    open_jsbeautifyrc(self.view.window())
+    open_jsbeautify_rc(self.view.window())
+
+class HtmlprettifySetPluginOptionsCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    open_htmlprettify_sublime_settings(self.view.window())
+
+class HtmlprettifySetKeyboardShortcutsCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    open_jshint_sublime_keymap(self.view.window(), {
+      "windows": "Windows", "linux": "Linux", "osx": "OSX"
+    }.get(sublime.platform()))
 
 class HtmlprettifySetNodePathCommand(sublime_plugin.TextCommand):
   def run(self, edit):
-    open_htmlprettifypy(self.view.window())
+    open_htmlprettify_sublime_settings(self.view.window())
+
+def open_jsbeautify_rc(window):
+  window.open_file(PLUGIN_FOLDER + "/" + RC_FILE)
+
+def open_htmlprettify_sublime_settings(window):
+  window.open_file(PLUGIN_FOLDER + "/" + SETTINGS_FILE)
+
+def open_jshint_sublime_keymap(window, platform):
+  window.open_file(PLUGIN_FOLDER + "/" + KEYMAP_FILE.replace("$PLATFORM", platform))
 
 def exists_in_path(cmd):
   # Can't search the path if a directory is specified.
@@ -116,14 +142,14 @@ def get_output(cmd):
       return commands.getoutput(run)
     else:
       # Handle Windows in Python 2.
-      return subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()[0]
+
+      # Hack to prevent console window from showing. Stolen from
+      # http://stackoverflow.com/questions/1813872/running-a-process-in-pythonw-with-popen-without-a-console
+      startupinfo = subprocess.STARTUPINFO()
+      startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+
+      return subprocess.Popen(cmd, stdout=subprocess.PIPE, startupinfo=startupinfo).communicate()[0]
   else:
     # Handle all OS in Python 3.
     run = '"' + '" "'.join(cmd) + '"'
     return subprocess.check_output(run, stderr=subprocess.STDOUT, shell=True)
-
-def open_jsbeautifyrc(window):
-  window.open_file(PLUGIN_FOLDER + "/.jsbeautifyrc")
-
-def open_htmlprettifypy(window):
-  window.open_file(PLUGIN_FOLDER + "/HTMLPrettify.py:" + str(NODE_LINE), sublime.ENCODED_POSITION)

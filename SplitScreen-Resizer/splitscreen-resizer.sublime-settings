@@ -17,12 +17,12 @@
 
     // Case 2.
     // Focus when resizing using this plugin's keyboard shortcuts?
-    // If false, it will only resize the columns keeping the focus where it is.
+    // If false, it will only resize the columns keeping the focus where it is. 
     // This can be useful depending on how your ratios are defined.
   "focus_on_resize" : true,
 
     // Columns resize ratios:
     // Remember that 70:30 = 7:3 = 0.7:0.3
-  "ratio_left"  : "56:44",
-  "ratio_right" : "44:56"
+  "ratio_left"  : "65:35",
+  "ratio_right" : "35:65"
 }

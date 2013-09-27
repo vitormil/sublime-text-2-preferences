@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1376575048,
+	"auto_upgrade_last_run": 1380239477,
 	"installed_packages":
 	[
 		"AdvancedNewFile",
@@ -12,7 +12,7 @@
 		"Clickable URLs",
 		"Color Highlighter",
 		"ColorPick",
-		"CTags",
+		"DashDoc",
 		"DetectSyntax",
 		"DocBlockr",
 		"ERB Insert and Toggle Commands",
@@ -54,6 +54,7 @@
 		"Theme - Soda",
 		"Toggle Symbol to String",
 		"VAlign",
+		"WordCount",
 		"ZenCoding"
 	],
 	"repositories":

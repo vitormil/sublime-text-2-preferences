@@ -57,6 +57,34 @@ class RailsRelatedFilesHelper:
     ]
 
     return RailsRelatedFilesHelper.get_files_while_walking(app_folder, walkers)
+  
+  @staticmethod
+  def for_helpers(app_folder, working_directory, base_file_name):
+
+    helper = base_file_name.replace('_helper', '')
+    model = Inflector(English).singularize(helper).lower()
+
+    namespace_directory    = RailsRelatedFilesHelper.get_namespace_directory(working_directory)
+    working_directory_base = os.path.basename(working_directory)
+
+    if namespace_directory:
+
+      helper = os.path.join(working_directory_base, helper)
+
+    walkers = [
+      'app/models/'         + model  + '*',
+      'app/models/**/'      + model  + '*',
+      'app/controllers/'    + helper + '**',
+      'app/controllers/**/' + helper + '**',
+      'app/views/'          + helper + '/**',
+      'app/views/**/'       + helper + '/**',
+      'test/'               + helper + '**',
+      'test/**/'            + helper + '**',
+      'spec/'               + helper + '**',
+      'spec/**/'            + helper + '**'
+    ]
+
+    return RailsRelatedFilesHelper.get_files_while_walking(app_folder, walkers)
 
   @staticmethod
   def for_views(app_folder, working_directory):
@@ -79,11 +107,11 @@ class RailsRelatedFilesHelper:
       'app/helpers/**/'         + controller + '**',
       'app/assets/javascripts/' + model      + '**',
       'app/assets/stylesheets/' + model      + '**',
-      'app/controllers/'        + controller + '**'
-      'app/controllers/**/'     + controller + '**'
-      'test/'                   + controller + '**'
-      'test/**/'                + controller + '**'
-      'spec/'                   + controller + '**'
+      'app/controllers/'        + controller + '**',
+      'app/controllers/**/'     + controller + '**',
+      'test/'                   + controller + '**',
+      'test/**/'                + controller + '**',
+      'spec/'                   + controller + '**',
       'spec/**/'                + controller + '**'
     ]
 
@@ -122,14 +150,6 @@ class RailsRelatedFilesHelper:
       model = base_file_name.replace('_spec', '').replace('test_', '')
       controller = Inflector(English).pluralize(model).lower()
 
-    namespace_directory    = RailsRelatedFilesHelper.get_namespace_directory(working_directory)
-    working_directory_base = os.path.basename(working_directory)
-
-    if namespace_directory:
-
-      controller = os.path.join(working_directory_base, controller)
-      model = os.path.join(working_directory_base, model)
-
     walkers = [
       'app/controllers/'    + controller + '**',
       'app/controllers/**/' + controller + '**',
@@ -161,7 +181,7 @@ class RailsRelatedFilesHelper:
   @staticmethod
   def get_namespace_directory(directory):
 
-    regex = re.compile('(\/app\/views|controllers|test|spec)\/(.*)') #amazing regex skills...
+    regex = re.compile('(\/app\/views|controllers|helpers|test|spec)\/(.*)') #amazing regex skills...
     match = regex.findall(directory)
 
     if match:
@@ -192,7 +212,7 @@ class RailsRelatedFilesHelper:
 
 class RailsRelatedFilesCommand(sublime_plugin.TextCommand):
 
-  APP_FOLDERS = ['app/controllers', 'app/models', 'app/views', 'test', 'spec'] #assets, helpers
+  APP_FOLDERS = ['app/controllers', 'app/helpers', 'app/models', 'app/views', 'test', 'spec'] #assets
 
   def run(self, edit, index):
 
@@ -251,6 +271,7 @@ class RailsRelatedFilesCommand(sublime_plugin.TextCommand):
 
         func, args = {
           'app/controllers': (RailsRelatedFilesHelper.for_controllers, (self.rails_root_directory, working_directory, file_name_base_no_ext,)),
+          'app/helpers'    : (RailsRelatedFilesHelper.for_helpers,     (self.rails_root_directory, working_directory, file_name_base_no_ext,)),
           'app/views'      : (RailsRelatedFilesHelper.for_views,       (self.rails_root_directory, working_directory,)),
           'app/models'     : (RailsRelatedFilesHelper.for_models,      (self.rails_root_directory, working_directory, file_name_base_no_ext,)),
           'test'           : (RailsRelatedFilesHelper.for_tests,       (self.rails_root_directory, working_directory, file_name_base_no_ext,)),
