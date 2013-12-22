@@ -64,13 +64,13 @@
 		"node_modules"
 	],
 	"font_face": "Menlo",
-    "font_face_windows": "Bitstream Vera Sans Mono",
+	"font_face_windows": "Bitstream Vera Sans Mono",
 	"font_options":
 	[
 		"subpixel_antialias"
 	],
 	"font_size": 21.0,
-    "font_size_windows": 14.0,
+	"font_size_windows": 14.0,
 	"hayaku_CSS_prefixes_disable": true,
 	"hayaku_CSS_whitespace_after_colon": " ",
 	"highlight_line": true,
