@@ -12,7 +12,6 @@
   { "keys": ["super+k", "super+r"], "command": "side_bar_rename"},
   { "keys": ["super+v"], "command": "paste_and_indent"},
   { "keys": ["super+shift+v"], "command": "paste"},
-  { "keys": ["super+shift+r"], "command": "show_panel", "args": {"panel": "output.exec"} },
 
   { "keys": ["f3"], "command": "sort_lines", "args": {"case_sensitive": false} },
   { "keys": ["ctrl+f3"], "command": "sort_lines", "args": {"case_sensitive": true} },
